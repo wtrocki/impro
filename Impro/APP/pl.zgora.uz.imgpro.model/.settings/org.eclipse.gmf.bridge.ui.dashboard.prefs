@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/pl.zgora.uz.imgpro.model/models/imgpro.genmodel
+gmf_dashboard/domainModel=platform\:/resource/pl.zgora.uz.imgpro.model/models/imgpro.ecore
+gmf_dashboard/generationModel=platform\:/resource/pl.zgora.uz.imgpro.model/models/My.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/pl.zgora.uz.imgpro.model/models/My.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/pl.zgora.uz.imgpro.model/models/My.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/pl.zgora.uz.imgpro.model/models/My.gmftool

@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+ <extension point="org.eclipse.ui.editors">
+       <editor
+           name="Matlab Editor"
+           extensions="m"
+           icon="icons/matclipse_file.png"
+           contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+           class="com.matlab.eclipse.meditor.editors.MatlabEditor"
+           id="com.matlab.eclipse.meditor.editors.MatlabEditor">
+       </editor>
+       <editor
+           name="com.matlab.eclipse PDF Editor"
+           extensions=""
+           icon="icons/matclipse_file.png"
+           class="com.matlab.eclipse.meditor.editors.PdfEditor"
+           id="com.matlab.eclipse.meditor.editors.PdfEditor">
+       </editor>
+    </extension>
+   
+    <extension point="org.eclipse.ui.preferencePages">
+        <page name="Matlab Editor"
+            class="com.matlab.eclipse.meditor.MatlabenginePrefsPage"
+            id="com.matlab.eclipse.meditor.MatlabenginePrefsPage">
+        </page>
+        <page name="Export"
+            class="com.matlab.eclipse.meditor.MatlabengineExportPrefsPage"
+            category="com.matlab.eclipse.meditor.MatlabenginePrefsPage"
+            id="com.matlab.eclipse.meditor.MatlabengineExportPrefsPage">
+        </page>
+        <page name="Helpbrowser"
+            class="com.matlab.eclipse.meditor.HelpBrowserPrefsPage"
+            category="com.matlab.eclipse.meditor.MatlabenginePrefsPage"
+            id="com.matlab.eclipse.meditor.HelpBrowserPrefsPage">
+        </page>
+    </extension>
+   
+   
+    <extension point="org.eclipse.ui.editorActions">
+        <editorContribution
+            id= "com.matlab.eclipse.meditor.editors.MatlabIndentationAction"
+            targetID= "com.matlab.eclipse.meditor.editors.MatlabEditor">
+            <menu id= "Edit"
+                label="&amp;Edit Menu" >
+                <separator name= "group1" />
+            </menu>
+            <action id= "com.matlab.eclipse.meditor.editors.MatlabIndentationAction"
+                label= "&amp;Correct Indentation"
+                menubarPath="Edit/group1"
+                class="com.matlab.eclipse.meditor.actions.MatlabIndentationAction"
+                definitionId="com.matlab.eclipse.actions.indentationaction">
+            <selection class="org.eclipse.core.resources.IFile"
+                name="*.m"/>
+            </action>
+        </editorContribution>
+
+        <editorContribution
+            id= "com.matlab.eclipse.meditor.editors.MatlabIndentAllAction"
+            targetID= "com.matlab.eclipse.meditor.editors.MatlabEditor">
+            <menu id= "Edit"
+                label="&amp;Edit Menu" >
+            <separator name= "group1" />
+            </menu>
+            <action id= "com.matlab.eclipse.meditor.editors.MatlabIndentAllAction"
+                label= "&amp;Indent document"
+                menubarPath="Edit/group1"
+                class="com.matlab.eclipse.meditor.actions.MatlabIndentAllAction"
+                definitionId="com.matlab.eclipse.actions.indentallaction">
+                <selection class="org.eclipse.core.resources.IFile"
+                    name="*.m"/>
+            </action>
+        </editorContribution>
+
+        <editorContribution
+            id= "com.matlab.eclipse.meditor.editors.MatlabComment"
+            targetID= "com.matlab.eclipse.meditor.editors.MatlabEditor">
+            <menu id= "Edit"
+                label="&amp;Edit Menu" >
+            <separator name= "group2" />
+            </menu>
+            <action id= "com.matlab.eclipse.meditor.editors.MatlabComment"
+                label= "Comment"
+                menubarPath="Edit/group2"
+                class="com.matlab.eclipse.meditor.actions.MatlabCommentAction"
+                definitionId="com.matlab.eclipse.actions.comment">
+                <selection class="org.eclipse.core.resources.IFile"
+                    name="*.m"/>
+            </action>
+        </editorContribution>
+       
+        <editorContribution
+            id= "com.matlab.eclipse.meditor.editors.MatlabUncomment"
+            targetID= "com.matlab.eclipse.meditor.editors.MatlabEditor">
+            <menu id= "Edit"
+                label="&amp;Edit Menu" >
+            <separator name= "group2" />
+            </menu>
+            <action id= "com.matlab.eclipse.meditor.editors.MatlabUncomment"
+                label= "Uncomment"
+                menubarPath="Edit/group2"
+                class="com.matlab.eclipse.meditor.actions.MatlabUncommentAction"
+                definitionId="com.matlab.eclipse.actions.uncomment">
+                <selection class="org.eclipse.core.resources.IFile"
+                    name="*.m"/>
+            </action>
+        </editorContribution>
+
+        <editorContribution
+            id= "com.matlab.eclipse.meditor.editors.MatlabHelpAction"
+            targetID= "com.matlab.eclipse.meditor.editors.MatlabEditor">
+            <menu id= "Help"
+                label="&amp;Help Menu" >
+                <separator name= "group1" />
+            </menu>
+            <action id= "com.matlab.eclipse.meditor.editors.MatlabHelpAction"
+                label= "Matlab help"
+                menubarPath="Help/group1"
+                class="com.matlab.eclipse.meditor.actions.MatlabHelpAction"
+                definitionId="com.matlab.eclipse.actions.helpaction">
+                <selection class="org.eclipse.core.resources.IFile"
+                    name="*.m"/>
+            </action>
+        </editorContribution>
+
+        <editorContribution
+            id= "com.matlab.eclipse.meditor.editors.MatlabExportAsAction"
+            targetID= "com.matlab.eclipse.meditor.editors.MatlabEditor">
+        <menu id= "File"
+            label="Export as..." >
+        <separator name= "group1" />
+        </menu>
+        <action id= "com.matlab.eclipse.meditor.editors.MatlabExportAsAction"
+            label= "Export as..."
+            menubarPath="File/group1"
+            class="com.matlab.eclipse.meditor.actions.MatlabExportAsAction"
+            definitionId="com.matlab.eclipse.actions.exportasaction">
+        <selection class="org.eclipse.core.resources.IFile"
+            name="*.m"/>
+        </action>
+        </editorContribution>
+ 
+        <editorContribution
+            id= "com.matlab.eclipse.meditor.editors.MatlabExportAction"
+            targetID= "com.matlab.eclipse.meditor.editors.MatlabEditor">
+        <menu id= "File"
+            label="Export" >
+        <separator name= "group1" />
+        </menu>
+        <action id= "com.matlab.eclipse.meditor.editors.MatlabExportAction"
+            label= "Export"
+            menubarPath="File/group1"
+            class="com.matlab.eclipse.meditor.actions.MatlabExportAction"
+            definitionId="com.matlab.eclipse.actions.exportaction">
+        <selection class="org.eclipse.core.resources.IFile"
+            name="*.m"/>
+        </action>
+        </editorContribution>
+    </extension>
+   
+    <extension point="org.eclipse.ui.commands">
+        <command
+            name="Matlab help"
+            description="Get matlab help for a function/keyword"
+            categoryId="com.matlab.eclipse.actions"
+            id="com.matlab.eclipse.actions.helpaction">
+        </command>
+        <command
+            name="Correct Indentation"
+            description="Indents marked text or the current line"
+            categoryId="com.matlab.eclipse.actions"
+            id="com.matlab.eclipse.actions.indentationaction">
+        </command>
+        <command
+            name="Indent document"
+            description="Indents the whole document"
+            categoryId="com.matlab.eclipse.actions"
+            id="com.matlab.eclipse.actions.indentallaction">
+        </command>
+        <category
+            name="Matlab actions"
+            description="Matlab actions"
+            id="com.matlab.eclipse.actions">
+        </category>
+    </extension>
+
+    <extension point="org.eclipse.ui.contexts">
+        <context
+            id="com.matlab.eclipse.meditor.matlabEditorScope"
+            name="Editing Matlab File"
+            description="Editing Matlab File"
+            parentId="org.eclipse.ui.textEditorScope"/>
+    </extension>
+
+    <extension point="org.eclipse.ui.bindings">
+        <key
+            sequence="F1"
+            contextId="com.matlab.eclipse.meditor.matlabEditorScope"
+            commandId="com.matlab.eclipse.actions.helpaction"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+        </key>
+        <key
+            sequence="Ctrl+I"
+            contextId="com.matlab.eclipse.meditor.matlabEditorScope"
+            commandId="com.matlab.eclipse.actions.indentationaction"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+        </key>
+        <key
+            sequence="TAB"
+            contextId="com.matlab.eclipse.meditor.matlabEditorScope"
+            commandId="com.matlab.eclipse.actions.indentationaction"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+        </key>
+        <key
+            sequence="Ctrl+Shift+I"
+            commandId="com.matlab.eclipse.actions.indentallaction"
+            contextId="com.matlab.eclipse.meditor.matlabEditorScope"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+        </key>
+    </extension>
+
+    <extension point="org.eclipse.ui.popupMenus"> 
+        <viewerContribution 
+            id="com.matlab.eclipse.meditor.editors.MatlabIndentAllAction"
+            targetID="com.matlab.eclipse.meditor.editors.MatlabEditor.contextmenu"> 
+            <menu id= "Source"
+                label="Source" >
+            </menu>
+            <action
+                id="com.matlab.eclipse.meditor.editors.MatlabIndentAllAction" 
+                label="&amp;Indent document"
+                menubarPath="Source/matlabIndentActions" 
+                class="com.matlab.eclipse.meditor.actions.MatlabIndentAllAction"> 
+                <selection class="org.eclipse.core.resources.IFile"
+                    name="*.m"/> 
+            </action> 
+        </viewerContribution> 
+    
+        <viewerContribution 
+            id="com.matlab.eclipse.meditor.editors.MatlabIndentationAction"
+            targetID="com.matlab.eclipse.meditor.editors.MatlabEditor.contextmenu"> 
+            <menu id= "Source"
+                label="Source" >
+            </menu>
+            <action
+                id="com.matlab.eclipse.meditor.editors.MatlabIndentationAction" 
+                label="&amp;Correct Indentation"
+                menubarPath="Source/matlabIndentActions" 
+                class="com.matlab.eclipse.meditor.actions.MatlabIndentationAction"> 
+                <selection class="org.eclipse.core.resources.IFile"
+                    name="*.m"/>
+            </action> 
+        </viewerContribution> 
+    
+        <viewerContribution 
+            id="com.matlab.eclipse.meditor.editors.MatlabUncomment"
+            targetID="com.matlab.eclipse.meditor.editors.MatlabEditor.contextmenu"> 
+            <menu id= "Source"
+                label="Source" >
+            </menu>
+            <action
+                id="com.matlab.eclipse.meditor.editors.MatlabUncomment" 
+                label="Uncomment"
+                menubarPath="Source/matlabCommentActions" 
+                class="com.matlab.eclipse.meditor.actions.MatlabUncommentAction"> 
+                <selection class="org.eclipse.core.resources.IFile"
+                    name="*.m"/>
+            </action> 
+        </viewerContribution> 
+    
+        <viewerContribution 
+            id="com.matlab.eclipse.meditor.editors.MatlabComment"
+            targetID="com.matlab.eclipse.meditor.editors.MatlabEditor.contextmenu"> 
+            <menu id= "Source"
+                label="Source" >
+            </menu>
+            <action
+                id="com.matlab.eclipse.meditor.editors.MatlabComment" 
+                label="Comment"
+                menubarPath="Source/matlabCommentActions" 
+                class="com.matlab.eclipse.meditor.actions.MatlabCommentAction"> 
+                <selection class="org.eclipse.core.resources.IFile"
+                    name="*.m"/>
+            </action> 
+        </viewerContribution> 
+    </extension>
+    
+    <extension 
+        point="org.eclipse.help.toc">
+        <toc file="doc/toc.xml" primary="true" />
+    </extension>
+
+</plugin>

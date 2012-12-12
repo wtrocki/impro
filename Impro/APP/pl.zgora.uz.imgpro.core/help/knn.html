@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+<body>
+<p><b>Klasyfikacja oparta na odleg&#322;o&#347;ci(KNN)</b></p>
+<p>Klasyfikacja obiekt&oacute;w testowych odbywa si&#281; poprzez por&oacute;wnywanie danych obiekt&oacute;w ze sob&#261;, lub po&#347;rednio ucz&#261;c na podstawie danych treningowych pewnego modelu decyzyjnego. Nast&#281;pnie stusuje si&#281; go do  klasyfikacji danych testowych w ustalony spos&oacute;b. Te sposoby klasyfikacji oparte s&#261; na odleg&#322;o&#347;ciach (blisko&#347;ciach) mi&#281;dzy obiektami. Odleg&#322;o&#347;ci s&#261; okre&#347;lane bior&#261;c pod uwag&#281; cechy warunkowe oraz znane s&#261; dla danych treningowych jak i nowych. W taki spos&oacute;b zachodzi mo&#380;liwo&#347;&#263; por&oacute;wnania dw&oacute;ch obiekt&oacute;w w trakcie klasyfikacji. Odleg&#322;o&#347;ci mog&#261; by&#263; okre&#347;lane w r&oacute;&#380;ny spos&oacute;b w zale&#380;no&#347;ci od typu cech. Najbardziej naturaln&#261; odleg&#322;o&#347;&#263; otrzymuje si&#281; dla rzeczywistych cech. </p>
+<p>&nbsp;</p>
+<p>clKNN = classKNN(training, group, key, schedule);<br />
+generateResults(clKNN, group, key, schedule, style, 'KNN');</p>
+<p>&nbsp;</p>
+<p>training - dane z wybranymi cechami <br />
+group&raquo;<span id="result_box" lang="pl" xml:lang="pl">przynale&#380;no&#347;&#263; do sklasyfikowanej grupy</span><br />
+key&raquo;klucz obszar rozk&#322;adu <br />
+schedule&raquo;wykorzystywany do krzy&#380;owej validacji <br />
+style&raquo;styl prezentowanego wyniku(basic, extended, full)<br />
+class&raquo;wynik klasyfikacji </p>
+<p><b>Algorytm k-NN</b></p>
+<p>Ustalamy warto&#347;&#263; k ,najlepiej liczb&#281; nieparzyst&#261;, najcz&#281;&#347;ciej od 5 do15.
+Dla ka&#380;dego obiektu testowego:
+<li>wyznaczamy odleg&#322;o&#347;&#263; r(z,x) pomi&#281;dzy z i ka&#380;dym obiektem treningowym x,</li>
+<li>znajdujemy k obiekt&oacute;w treningowych najbli&#380;szych z,</li>
+<li>w&#347;r&oacute;d warto&#347;ci decyzji odpowiadaj&#261;cych tym obiektom wykonujemy g&#322;osowanie,</li>
+<li>najcz&#281;&#347;ciej wyst&#281;puj&#261;c&#261; warto&#347;&#263; decyzji przypisujemy obiektowi z.</li>
+<p>Zalety (k-NN):</p>
+<li>asymptotyczna optymalno&#347;&#263;,</li>
+<li>dobra jako&#347;&#263; klasyfikacji,</li>
+<li>prosta implementacja,</li>
+<li>mo&#380;liwe modyfikacje.</li>
+<br />
+Wady (k-NN):<br />
+<br />
+<li>wolna klasyfikacja;</li>
+<li>pojawiaj&#261;ce sie b&#322;&#281;dy przy zb&#281;dnych cechy;</li>
+<p><img src="../opis/obraz.gif" width="452" height="434" /></p>
+<p>Bibliografia:</p>
+<p>zsi.tech.us.edu.pl/~nowak/si/w4.pdf</p>
+<p>www.scribd.com/doc/2242106/26/Klasy&#64257;kator-KNN<br>
+</p>
+</body>
+</html>

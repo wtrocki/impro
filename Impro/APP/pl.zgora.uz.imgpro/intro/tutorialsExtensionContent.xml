@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<introContent>
+  	<extensionContent id="pl.com.astec.mdt.tutorial" style="css/common.css" name="Impro Tutorials" path="tutorials/@">
+		<group id="content-group" style-id="content-group">
+			<link id="impro_tutorial" style-id="content-link"
+				label="Use Impro" 
+       			url="http://org.eclipse.ui.intro/showHelpTopic?id=/pl.zgora.uz.imgpro.help/html/gettingstarted/firstModel.htm">
+          		<text>Learn how to start working with Impro</text>
+       		</link>
+       	</group>
+  	</extensionContent>
+</introContent>

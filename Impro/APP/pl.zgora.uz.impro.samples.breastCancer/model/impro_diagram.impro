@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ASCII"?>
+<imgpro_model_diagram:ImproDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:imgpro_model_diagram="http:/uz.zgora/imgpro/model/diagram">
+  <elements xsi:type="imgpro_model_diagram:DirInput" elementName="Benign" elementComment="Benign images from different patiens">
+    <connections connectionType="Image List " target="SegBenignAt"/>
+    <outputs typeName="Image List "/>
+    <sourceLinker sourceFilePath="pl.zgora.uz.impro.samples.breastCancer\sources\DirInput.m"/>
+    <directory name="E:\mgr\tests\Benign\"/>
+  </elements>
+  <elements xsi:type="imgpro_model_diagram:SegAT" connectedWith="Benign" elementName="SegBenignAt" phase="Segmentation" elementComment="Segmentation for Beningn">
+    <connections connectionType="B/W images " target="BenignFeatures"/>
+    <inputs typeName="Image List "/>
+    <outputs typeName="B/W images "/>
+    <sourceLinker sourceFilePath="pl.zgora.uz.impro.samples.breastCancer\sources\SegAT.m"/>
+  </elements>
+  <elements xsi:type="imgpro_model_diagram:ExtractFeatures" connectedWith="SegBenignAt" elementName="BenignFeatures" phase="Features Extraction" elementComment="Full features computation for benign" classificationGroup="Benign">
+    <connections connectionType="Features" target="ForwardSelection"/>
+    <inputs typeName="B/W images "/>
+    <outputs typeName="Features"/>
+    <sourceLinker sourceFilePath="pl.zgora.uz.impro.samples.breastCancer\sources\ExtractFeatures.m"/>
+  </elements>
+  <elements xsi:type="imgpro_model_diagram:ForwardSelection" connectedWith="BenignFeatures MalignantFeatures" elementName="ForwardSelection" phase="Features Selection" elementComment="Forward Selection for all classifiers">
+    <connections connectionType="Features" target="Classification"/>
+    <inputs typeName="Features"/>
+    <outputs typeName="Features"/>
+    <sourceLinker sourceFilePath="pl.zgora.uz.impro.samples.breastCancer\sources\ForwardSelection.m"/>
+    <classifiers>Decision trees</classifiers>
+    <classifiers>Ensemble classifier</classifiers>
+    <classifiers>Naive Bayes</classifiers>
+    <classifiers>KNN</classifiers>
+    <features>DistToCentroid_mean</features>
+    <features>Eccentricity_var</features>
+    <features>Perimeter_var</features>
+    <features>LuminanceVariance_var</features>
+    <features>MajorAxisLength_var</features>
+    <features>DistToCentroid_var</features>
+    <features>Area_var</features>
+    <features>MinorAxisLength_mean</features>
+    <features>LuminanceMean_var</features>
+    <features>MinorAxisLength_var</features>
+    <features>Perimeter_mean</features>
+    <features>LuminanceVariance_mean</features>
+    <features>MajorAxisLength_mean</features>
+    <features>LuminanceMean_mean</features>
+    <features>Area_mean</features>
+    <features>Eccentricity_mean</features>
+  </elements>
+  <elements xsi:type="imgpro_model_diagram:Classification" connectedWith="ForwardSelection" elementName="Classification" phase="Classification" elementComment="Classification with full information" classificationStyle="full">
+    <inputs typeName="Features"/>
+    <sourceLinker sourceFilePath="pl.zgora.uz.impro.samples.breastCancer\sources\Classification.m"/>
+    <features>Area_var</features>
+    <features>DistToCentroid_var</features>
+    <features>MajorAxisLength_var</features>
+    <features>LuminanceVariance_var</features>
+    <features>DistToCentroid_mean</features>
+    <features>LuminanceMean_var</features>
+    <features>MinorAxisLength_mean</features>
+    <features>MinorAxisLength_var</features>
+    <features>LuminanceVariance_mean</features>
+    <features>Perimeter_mean</features>
+    <features>MajorAxisLength_mean</features>
+    <features>Area_mean</features>
+    <features>LuminanceMean_mean</features>
+    <features>Eccentricity_mean</features>
+    <features>Eccentricity_var</features>
+    <features>Perimeter_var</features>
+  </elements>
+  <elements xsi:type="imgpro_model_diagram:ExtractFeatures" connectedWith="SegMalignantAT" elementName="MalignantFeatures" phase="Features Extraction" elementComment="Full features computation for benign" classificationGroup="Malignant">
+    <connections connectionType="Features" target="ForwardSelection"/>
+    <inputs typeName="B/W images "/>
+    <outputs typeName="Features"/>
+    <sourceLinker sourceFilePath="pl.zgora.uz.impro.samples.breastCancer\sources\ExtractFeatures.m"/>
+  </elements>
+  <elements xsi:type="imgpro_model_diagram:DirInput" elementName="Malignant" elementComment="Malignant images from different patiens">
+    <connections connectionType="Image List " target="SegMalignantAT"/>
+    <outputs typeName="Image List "/>
+    <sourceLinker sourceFilePath="pl.zgora.uz.impro.samples.breastCancer\sources\DirInput.m"/>
+    <directory name="E:\mgr\tests\Malignant\"/>
+  </elements>
+  <elements xsi:type="imgpro_model_diagram:SegAT" connectedWith="Malignant" elementName="SegMalignantAT" phase="Segmentation" elementComment="Segmentation for Malignant">
+    <connections connectionType="B/W images " target="MalignantFeatures"/>
+    <inputs typeName="Image List "/>
+    <outputs typeName="B/W images "/>
+    <sourceLinker sourceFilePath="pl.zgora.uz.impro.samples.breastCancer\sources\SegAT.m"/>
+  </elements>
+</imgpro_model_diagram:ImproDiagram>

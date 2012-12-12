@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="pl.zgora.uz.imgpro.transformation.MatlabTransformation">
+      <transformation
+            description="Module for Matlab R2011a and newest. "
+            icon="icons/indeks.jpg"
+            id="pl.zgora.uz.imgpro.core.r2011"
+            module="pl.zgora.uz.imgpro.core.transformation.MatlabTransformationModule"
+            name="Matlab R2011a">
+      </transformation>
+      <transformation
+            description="R2009b generation module"
+            icon="icons/indeks.jpg"
+            id="pl.zgora.uz.imgpro.core.r2009"
+            module="pl.zgora.uz.imgpro.core.transformation.MatlabTransformationModule"
+            name="Matlab R2009b">
+      </transformation>
+      <transformation
+            description="Octave (not implemented)"
+            id="pl.zgora.uz.imgpro.core.octave"
+            module="pl.zgora.uz.imgpro.core.transformation.MatlabTransformationModule"
+            name="Octave">
+      </transformation>
+   </extension>
+
+</plugin>

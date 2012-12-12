@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../book.css" charset="ISO-8859-1" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <title>
+      
+    </title>
+    <script language="JavaScript" type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"> </script>
+  </head>
+  <body>
+    <h1>
+	Extract Features
+    </h1>
+    <p><img src="./images/extract.png"></img>
+    </p>
+    <h2>Opis</h2>
+<p>
+Wyodrębnia listę funkcji cech z danego zbioru obrazów po wstępnej segmentacji.
+</p>
+<p>
+Zeskanowane obrazy są znacznej wielkości oraz posiadają wiele zbędnych informacji co może powodować uzyskanie błędnych informacji oraz długotrwały proces ich przetwarzania. Z tego powodu dąży się do selekcji i redukcji informacji zastępując te obrazy wektorami z najistotniejszymi ich cechami.
+Po segmentacji obrazu otrzymujemy obraz wynikowy (najczęciej binarny), na podstawie którego można wydzielić cechy obiektów. Przed wykonaniem pomiarów najlepiej jest usunąć niepełne obiekty, które mogły zostać przecięte brzegiem obrazu.
+</p>
+<p>
+Ekstrakcja cech jest to analiza obrazu składająca się z konstrukcji cech i ich selekcji. Stosujemy ją do wyodrębnienia informacji z obrazu tak aby poszczególne klasy były lepiej separowalne, niekoniecznie muszą przypominać te używane przez człowieka. Następnie dla każdej z cech przypisywana jest wartoć. Jest to tak zwane przetwarzanie redniego poziomu.
+</p>
+<p>
+Cechy obrazów można podzielić na kilka kategorii.
+</p>
+<p>
+<ul>
+Przy analizie kształtu:
+<li> Szkielet</li>
+<li> Odległoci od rodka ciężkoci obiektu</li>
+<li> Linia brzegowa</li>
+<li> Obszar obiektu</li>
+<li> Wypukłoci</li>
+<li> Cechy topologiczne</li>
+</ul>
+</p>
+<p>
+Z bloku ekstrakcji cech w programie otrzymujemy strukturę z pełnymi informacjami cech oraz ich wartoci średnie i ich wariancje:
+<ul>
+<li>Area - obszar pikseli należących to obiektu.</li>
+<li>Perimeter - Obwód obiektu.</li>
+<li>Eccentricity - stosunek odległości między ogniskami do długoci głównej osi.</li>
+<li>MajorAxisLength - długość w pikselach dłuższej osi elipsy dopasowanej do obiektu</li>
+<li>MinorAxisLength - długoć krótszej osi elipsy dopasowanej do obiektu</li>
+<li>Luminance - Luminancja pikseli</li>
+<li>DistToCentroid - Odległośc euklidesowa od środka masy obiektu.</li>
+</ul>
+</p>
+<p>
+W Zależnoci od celu analizy opis cech skupia się głównie na jego obszarze wyznaczoną linią brzegową obiektu okrelającą jej cechy geometryczne i ułożenie przestrzenne.
+</p>
+    <h2>Pola</h2>
+       <ul>
+       <li>
+	   <strong>Classification group</strong> - Parametr określa grupę do której będziemy klasyfikować dany zbiór. Na podstawie tej wartoci powstaje klasa Group Converter która przypisuje identyfikator do każdej grupy np:
+	   <pre>
+	           switch groupName % gives a number for each diagnosis, it's for classification purposes
+	                case 'test'; value = 0;
+	                case 'test2'; value = 1;
+	                otherwise; error(['Unknown classification group: ' groupName]);
+	           end
+       </pre>
+	   </li>
+       </ul>
+    <h2>Wejcia/Wyjcia</h2>
+    <ul>
+        <li>
+		<strong>Wejcie</strong> -  lista ze cieżką lokalizacji do obrazów po wstępnej segmentacji.
+		</li>
+        <li><strong>Wyjcie</strong> - struktura zawierająca cechy obiektów.
+		 <pre>
+		<strong>Zawartość struktury dla każdego z obrazów:</strong>
+		
+		Area
+		Perimeter
+		Eccentricity
+		MajorAxisLength
+		MinorAxisLength
+		LuminanceVariance
+		LuminanceMean
+		DistToCentroid
+		
+		Area_mean
+		Area_var
+		Perimeter_mean
+		Perimeter_var
+		Eccentricity_mean
+		Eccentricity_var
+		MajorAxisLength_mean
+		MajorAxisLength_var
+		MinorAxisLength_mean
+		MinorAxisLength_var
+		LuminanceMean_mean
+		LuminanceMean_var
+		LuminanceVariance_mean
+		LuminanceVariance_var
+		DistToCentroid_mean
+		DistToCentroid_var
+		
+		FileName
+		PatientNo
+		Diagnosis
+		ClassificationGroup
+		 </pre>
+		 </li>
+    </ul>
+	<h2>Zobacz również</h2>
+    <ul>
+		<li><strong><a href="ef.htm">Extract Features</a></strong></li>
+		<p></p>
+        <li><strong><a href="">Segmentation</a></strong></li>
+        <li><strong><a href="">Classification</a></strong></li>
+    </ul>
+  </body>
+</html>

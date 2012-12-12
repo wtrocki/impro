@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ASCII"?>
+<imgpro_model_diagram:ImproDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:imgpro_model_diagram="http:/uz.zgora/imgpro/model/diagram">
+  <elements xsi:type="imgpro_model_diagram:DirInput" elementName="BanknotyRaw">
+    <connections connectionType="Image List " target="AdaptiveCrop"/>
+    <outputs typeName="Image List "/>
+    <sourceLinker sourceFilePath="pl.zgora.uz.impro.samples.banknoty\sources\DirInput.m"/>
+    <directory name="E:\mgr\impro_1.3.1\workspace\pl.zgora.uz.impro.samples.banknoty\images\classic\"/>
+  </elements>
+  <elements xsi:type="imgpro_model_diagram:Crop" connectedWith="BanknotyRaw" elementName="AdaptiveCrop" phase="Preprocessing">
+    <connections connectionType="Image List " target="CustomizedSegAT"/>
+    <inputs typeName="Image List "/>
+    <outputs typeName="Image List "/>
+    <sourceLinker sourceFilePath="pl.zgora.uz.impro.samples.banknoty\sources\Crop.m"/>
+  </elements>
+  <elements xsi:type="imgpro_model_diagram:SegAT" connectedWith="AdaptiveCrop" elementName="CustomizedSegAT" phase="Segmentation">
+    <connections connectionType="B/W images " target="ExtractFeatures"/>
+    <inputs typeName="Image List "/>
+    <outputs typeName="B/W images "/>
+    <sourceLinker sourceFilePath="pl.zgora.uz.impro.samples.banknoty\sources\SegAT.m"/>
+  </elements>
+  <elements xsi:type="imgpro_model_diagram:ExtractFeatures" connectedWith="CustomizedSegAT" elementName="ExtractFeatures" phase="Features Extraction" classificationGroup="banknoty">
+    <connections connectionType="Features" target="Classification"/>
+    <inputs typeName="B/W images "/>
+    <outputs typeName="Features"/>
+    <sourceLinker sourceFilePath="pl.zgora.uz.impro.samples.banknoty\sources\ExtractFeatures.m"/>
+  </elements>
+  <elements xsi:type="imgpro_model_diagram:Classification" connectedWith="ExtractFeatures" elementName="Classification" phase="Classification">
+    <inputs typeName="Features"/>
+    <sourceLinker sourceFilePath="pl.zgora.uz.impro.samples.banknoty\sources\Classification.m"/>
+  </elements>
+</imgpro_model_diagram:ImproDiagram>

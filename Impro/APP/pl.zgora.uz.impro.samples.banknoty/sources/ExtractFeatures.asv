@@ -1,0 +1,82 @@
+classdef ExtractFeatures < Operation
+    %# ExtractFeatures
+    %% Extracts features from given set of segmented images
+    
+    %% Class Properties
+    properties (SetAccess = public)
+        ClassificationName
+    end
+    
+    methods
+        function EF = ExtractFeatures(classificationName)
+            EF@Operation();
+            if nargin < 1
+                error('Invalid input arguments. Please provide DirInput object')
+            end
+            EF.ClassificationName=classificationName;
+        end
+        
+        function features = processOperation(EF,args)
+            if(size(args,2)~=4)
+                error('Invalid processing arguments for ExtractFeatures');
+            end
+            features= EF.extractFeatures(args{1},args{2},args{3},args{4});
+        end
+
+        function [feature] = extractFeatures(EF,FE,segImage,originalImage,index)
+                
+                f = [];
+                f.ikona=ikona(segImage);
+                f.odcien=odcien(originalImage);
+                            
+                f.wynik=sprawdz(f.ikona, f.odcien);
+
+                if f.wynik==-1
+                    segImage = imrotate(segImage, 180);
+                    originalImage = imrotate(originalImage, 180);
+                    f = [];
+                    f.ikona=ikona(segImage);
+                    f.odcien=odcien(originalImage);
+                    f.wynik=sprawdz(f.ikona, f.odcien);
+                end
+                
+                if (f.wynik == -1)
+                    f.wynik = 0;
+                    f.odcien = 0;
+                    f.ikona = 0; 
+                end                    
+                
+                feature=f;
+                
+        end
+        function wynik=sprawdz(ikona, odcien)
+                   MAX_ROZNICA = 3;
+                 f.wynik = -1;
+                if((f.ikona==1) && ((26 - f.odcien) <= MAX_ROZNICA))
+                    f.wynik = 10;
+                	%disp('kwadrat');
+                end
+                 
+                if((f.ikona==2) && ((20 - f.odcien) <= MAX_ROZNICA))
+                    f.wynik = 200;
+                	%disp('trojkat');
+                end
+                
+                if((f.ikona==3) && ((242 - f.odcien) <= MAX_ROZNICA))
+                    f.wynik = 20;
+                	%disp('kolo');
+                end
+                
+                if((f.ikona==4) && ((143 - f.odcien) <= MAX_ROZNICA))
+                    f.wynik = 50;
+                	%disp('deltoid');
+                end
+                
+                if((f.ikona==5) && ((72 - f.odcien) <= MAX_ROZNICA))
+                    f.wynik = 100;
+                	%disp('krzyz');
+                end
+              wynik=f.wynik;  
+        end
+    end
+end

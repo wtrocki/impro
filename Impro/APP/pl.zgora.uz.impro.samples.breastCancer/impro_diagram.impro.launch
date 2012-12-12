@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="pl.zgora.uz.imgpro.transformation.launchConfigurationType">
+<stringAttribute key="CONTAINER_ATTRIBUTE_ID" value="test\sources"/>
+<stringAttribute key="MODEL_ATTRIBUTE_ID" value="test\model\impro_diagram.impro"/>
+<stringAttribute key="MODULE_ATTRIBUTE_ID" value="pl.zgora.uz.imgpro.core.r2011"/>
+</launchConfiguration>

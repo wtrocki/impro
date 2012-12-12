@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script language="JavaScript" type="text/javascript" src="../opis/PLUGINS_ROOT/org.eclipse.help/livehelp.js"> </script>
+</head>
+<body>
+<h1>Drzewo decyzyjne</h1>
+<p>Drzewo decyzyjne jest skierowanym grafem acyklicznym, gdzie ka&#380;dy wierzcho&#322;ek reprezentuje test na atrybutach, a &#322;uki s&#261; wynikami testu. Ka&#380;dy li&#347;&#263; odzwieciedla pojedy&#324;cz&#261; klas&#281; lub rozk&#322;ad warto&#347;ci klas. Najwy&#380;szym wierzcho&#322;ekiem kt&oacute;ry widnieje w rozk&#322;adzie jest &quot;korze&#324;&quot;. Wynikiem klasyfikacji w metodzie tej jest drzewo dezyzyjne. Drzwo rekurencyjnie dokonuje dzielenia zbioru na partycje a&#380; do momentu, gdzie ka&#380;da partycja posiada dane nale&#380;&#261;ce do jednej klasy, lub, gdy w partycji dominuj&#261; dane nale&#380;&#261;ce do danej klasy. Ka&#380;dy wierzcho&#322;ek wewn&#261;trz drzewa zawiera punkt podzia&#322;u (split point), kt&oacute;rym jest test na atrybutach dziel&#261;cy obszar zbiorudanych na partycj&#281;.</p>
+<p>Algorytm podstawowy:</p>
+<p>Algorytm zach&#322;anny, kt&oacute;ry tworzy rekurencyjnie drzewo decyzyjne metod&#261; top-down. Istnieje wiele wariant&oacute;w algorytm&oacute;w podstawowych:
+<li>uczenie maszynowe (ID3,C4.5)</li>
+<li>statystyka (CART)</li>
+<li>rozpoznawanie obrazów(CHAID)</li><br /> 
+Podstawowa ró&#380;nica w funkcjonwaniu tych algorytmów jest kryterium podzia&#322;u.</p>
+<p><img src="../opis/decisi.jpg" width="200" height="200" /></p>
+<p>&nbsp;</p>
+<p>clDT = classDecisionTrees(training, group, key, schedule);<br />
+generateResults(clDT, group, key, schedule, style, 'Decision trees'); </p>
+<p>&nbsp;</p>
+<li>training&raquo; dane z wybranymi cechami </li>
+<li>group&raquo; przynale&#380;no&#347;&#263; do sklasyfikowanej grupy</li>
+<li>key&raquo; klucz i obszar rozk&#322;adu</li>
+<li>schedule&raquo; wykorzystywany do krzy&#380;owej validacji</li>
+<li>style&raquo; styl prezentowanego wyniku(basic, extended, full)</li>
+<li>class&raquo; wynik klasyfikacji </li>
+<p>Zalety:</p>
+<li>cz&#281;sto du&#380;a szybko&#347;&#263; klasyfikacji,</li>
+<li>prostota og&oacute;lnej koncepcji,</li>
+<li>niewra&#380;liwo&#347;&#263; na skalowanie cech,</li>
+<li>wzgl&#281;dna odporno&#347;&#263; na zb&#281;dne cechy.</li>
+<p>&nbsp; Wady:</p>
+<li>trudno&#347;&#263; w aproksymacji prostych, </li>
+<li>niestabilno&#347;&#263; (ma&#322;e zmiany na  wej&#347;ciu powoduj&#261; du&#380;e zmiany w strukturze drzewa);</li>
+<li>problemy z obs&#322;ug&#261; brakuj&#261;cych warto&#347;ci cech.</li>
+<p>Bibliografia: </p>
+<p>mfiles.pl/pl/index.php/Drzewo_decyzyjne</p>
+<p>kbo.ue.poznan.pl/marcinkowski/libraryz/wyklad4zb.pdf</p>
+</body>
+</html>

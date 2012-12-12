@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="pl.zgora.uz.impro.category"
+            name="ImPro">
+      </category>
+      <wizard
+            category="pl.zgora.uz.impro.category"
+            class="pl.zgora.uz.imgpro.ui.wizard.CreateImproDiagramWizard"
+            descriptionImage="images/model.gif"
+            finalPerspective="pl.zgora.uz.imgpro.perspective"
+            icon="images/model.gif"
+            id="pl.zgora.uz.imgpro.ui.model.create.wizard"
+            name="Impro Diagram">
+         <description>
+            Impro Model wizard
+         </description>
+      </wizard>
+      <wizard
+            category="pl.zgora.uz.impro.category"
+            class="pl.zgora.uz.imgpro.ui.wizard.NewImproProjectWizard"
+            icon="images/proj.gif"
+            id="pl.zgora.uz.imgpro.ui.wizards.NewImproProjectWizard"
+            name="Impro Project"
+            project="true">
+      </wizard>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="pl.zgora.uz.imgpro.ui.perspective.PerspectiveFactory"
+            icon="images/perspective.gif"
+            id="pl.zgora.uz.imgpro.perspective"
+            name="ImPro">
+         <description>
+            Image Processing Toolbox Perspective
+         </description>
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="pl.zgora.uz.imgpro.perspective">
+         <newWizardShortcut
+               id="pl.zgora.uz.imgpro.ui.wizards.NewImproProjectWizard">
+         </newWizardShortcut>
+         <newWizardShortcut
+               id="pl.zgora.uz.imgpro.ui.model.create.wizard">
+         </newWizardShortcut>
+         <perspectiveShortcut
+               id="com.matlab.eclipse.mconsole.perspectives.MatlabWorkbench">
+         </perspectiveShortcut>
+         <newWizardShortcut
+               id="com.matlab.eclipse.mconsole.wizards.NewMatlabFileWizard">
+         </newWizardShortcut>
+         <actionSet
+               id="org.eclipse.debug.ui.launchActionSet">
+         </actionSet>
+      </perspectiveExtension>
+   </extension>
+
+		<extension
+	    point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+	    <propertyContributor contributorId="ImProDiagram.PropertyContributor">
+	        <propertyCategory category="impro">
+	        </propertyCategory>
+	    </propertyContributor>
+	</extension>
+	 
+	<extension
+	    point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+	    <propertyTabs contributorId="ImProDiagram.PropertyContributor">
+	        <propertyTab
+               category="impro"
+               id="pl.zgora.uz.imgpro.main.tab"
+               image="platform:/plugin/pl.zgora.uz.imgpro.diagram/icons/pane/properties.jpg"
+               label="Main">
+	        </propertyTab>
+         <propertyTab
+               afterTab="pl.zgora.uz.imgpro.main.tab"
+               category="impro"
+               id="pl.zgora.uz.imgpro.diagram.property.execution"
+               image="platform:/plugin/pl.zgora.uz.imgpro.diagram/icons/start_task.gif"
+               label="Execution">
+         </propertyTab>
+	    </propertyTabs>
+	</extension>
+	 
+	<extension
+	    point="org.eclipse.ui.views.properties.tabbed.propertySections">
+	    <propertySections contributorId="ImProDiagram.PropertyContributor">
+	        <propertySection
+               class="pl.zgora.uz.imgpro.ui.properties.BindedDiagramElementSection"
+               filter="pl.zgora.uz.imgpro.ui.properties.DiagramElementsFilter"
+               id="pl.zgora.uz.imgpro.main.tab.id"
+               tab="pl.zgora.uz.imgpro.main.tab">
+	        </propertySection>
+         <propertySection
+               class="pl.zgora.uz.imgpro.ui.properties.DiagramElementExecutionSection"
+               filter="pl.zgora.uz.imgpro.ui.properties.DiagramElementsFilter"
+               id="pl.zgora.uz.imgpro.main.tab.id"
+               tab="pl.zgora.uz.imgpro.diagram.property.execution">
+         </propertySection>
+	    </propertySections>
+	</extension>
+ <extension
+       point="org.eclipse.core.runtime.preferences">
+    <initializer
+          class="pl.zgora.uz.imgpro.ui.preferences.PreferenceInitializer">
+    </initializer>
+ </extension>
+
+</plugin>

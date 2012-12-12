@@ -1,0 +1,25 @@
+Drzewo decyzyne<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script language="JavaScript" type="text/javascript" src="../opis/PLUGINS_ROOT/org.eclipse.help/livehelp.js"> </script>
+</head>
+<body>
+<h1>Zespól Klasyfikatorów</h1>
+<p>Na zesp&oacute;&#322; klasyfikator&oacute;w w bloku Classifiation  sk&#322;adaj&#261; sie trzy klasyfikatory: drzewa decyzyjne, klasyfikator naiwny bayesa,K-NN. S&#261; to schematy r&oacute;wnoleg&#322;e z g&#322;osowaniem, gdzie poszczeg&oacute;lne klasyfikatory sk&#322;adowe dokonuj&#261; niezale&#380;nie predykcji, zwracaj&#261;c etykiet&#281; klasyfikowanej pr&oacute;bki. Model wy&#380;szego rz&#281;du &#322;&#261;czy ich predykcje. Metod&#261; pozyskiwania finalnej decyzji jest g&#322;osowanie wi&#281;kszo&#347;ciowe. Metoda polega na k-krotnym wylosowaniu w pwt&oacute;rzeniami n pr&oacute;bek z n-elemntowego zbioru odniesienia, w wyniku czego otrzymywanych jest k zbior&oacute;w odniesienia, z kt&oacute;rych ka&#380;dy zawiera &#347;rednio ok. 63,2% r&oacute;&#380;nych pr&oacute;bek z oryginalnego zbioru. </p>
+<p>&nbsp;</p>
+<p>clEC = classEnsembleClass(clKNN, clNB, clDT);<br />
+generateResults(clEC, group, key, schedule, style, 'Ensemble classifier');</p>
+<p>&nbsp;</p>
+<li>training &raquo; dane z wybranymi cechami</li> 
+<li>group &raquo; przynale&#380;no&#347;&#263; do sklasyfikowanej grupy</li>
+<li>key &raquo; klucz i obszar rozk&#322;adu</li>
+<li>schedule &raquo; wykorzystywany do krzy&#380;owej validacji</li> 
+<li>style &raquo; styl prezentowanego wyniku(basic, extended, full)</li>
+<li>class &raquo; wynik klasyfikacji</li> </p>
+<p><img src="../opis/ok.JPG" width="488" height="482" /></p>
+<p>Bibliografia:</p>
+<p>students.mimuw.edu.pl/~dloz/ensemble.pdf</p>
+</body>
+</html>

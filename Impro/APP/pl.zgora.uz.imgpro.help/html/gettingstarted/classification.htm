@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+<link rel="stylesheet" href="../book.css" charset="ISO-8859-2"
+	type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>Modelowanie klasyfikacji</title>
+<script language="JavaScript" type="text/javascript"
+	src="PLUGINS_ROOT/org.eclipse.help/livehelp.js">
+	
+</script>
+</head>
+<body>
+	<h1>Modelowanie klasyfikacji</h1>
+	<p>Poniżej przedstawiono instrukcję pozwalającą na zamodelowanie
+		systemu Breast Cancer Diagnostic System.</p>
+	<h2>Modelowanie grup</h2>
+	<ol>
+		<li>Tworzenie modelu rozpoczynamy od dodania elementów typu
+			dirinput ( dla przejrzystości zmieniono ich nazwę tak by odpowiadała
+			grupie którą reprezentują.)</li>
+		<li>Przechodzimy do "Properties" view i podajemy katalog
+			zawierający obrazy z danej grupy.</li>
+		<li>Dodajemy bloki segmentacji. W tym przykładzie użyto metodę
+			adaptacji progowej.</li>
+		<li>Dodajemy bloki odpowiedzialne za ekstrakcje cech.</li>
+		<li>Przchodzimy do "Properties" view i podajemy nazwę klasy.</li>
+		<li>W ten sposób powinny powstać dwa niezależne cykle
+			przetwarzania. Łączymy je z blokami odpowiedzialnymi za klasyfikacje.</li>
+	</ol>
+	<p>Przykład:</p>
+	<p>
+		<img src="images/example.png"></img>
+	</p>
+</body>
+</html>
+

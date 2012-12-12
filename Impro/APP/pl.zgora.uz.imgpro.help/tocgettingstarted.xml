@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="Wprowadzenie" link_to="toc.xml#gettingstarted">
+   <topic href="html/gettingstarted/firstStepsProject.htm" label="Tworzenie projektu i modelu">
+   </topic>
+   <topic href="html/gettingstarted/firstModel.htm" label="Pierwszy diagram">
+   </topic>
+   <topic href="html/gettingstarted/generateCode.htm" label="Generacja kodu">
+   </topic>
+   <topic href="html/gettingstarted/running.htm" label="Uruchamienie kodu">
+   </topic>
+   <topic href="html/gettingstarted/classification.htm" label="Modelowanie klasyfikacji">
+   </topic>
+</toc>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.validation.constraintProviders">
+      <category
+            id="pl.zgora.uz.imgpro.diagram.validation.category"
+            mandatory="false"
+            name="Impro General">
+      </category>
+      <constraintProvider
+            mode="Batch">
+         <package
+               namespaceUri="http:/uz.zgora/imgpro/model/diagram">
+         </package>
+           <constraints categories="pl.zgora.uz.imgpro.diagram.validation.category">
+              <constraint
+                    class="pl.zgora.uz.imgpro.diagram.validation.constraints.AscCycleConstraint"
+                    id="pl.zgora.uz.imgpro.diagram.validation.category.DiagramCycles"
+                    isEnabledByDefault="true"
+                    lang="Java"
+                    mode="Batch"
+                    name="A Cycle found"
+                    severity="ERROR"
+                    statusCode="1">
+                 <target
+                       class="DiagramElement">
+                 </target>
+                 <description>
+                    Checks if model has cycles.
+                 </description>
+                 <message>
+                    Diagram with cycles. Remove cycles to enable proper processing.
+                 </message>
+              </constraint>
+                          <constraint
+                  class="pl.zgora.uz.imgpro.diagram.validation.constraints.NonEmptyDirectoryConstraint"
+                  id="pl.zgora.uz.imgpro.diagram.validation.notEmptyDirectory"
+                  isEnabledByDefault="true"
+                  lang="java"
+                  mode="Batch"
+                  name="Non-Empty Directory"
+                  severity="ERROR"
+                  statusCode="1">
+               <target
+                     class="DirInput">
+               </target>
+               <message>
+                  {0} should have input directory specification
+               </message>
+               <description>
+                  Dir input should have input directory specification
+               </description>
+            </constraint>
+            <constraint
+                  class="pl.zgora.uz.imgpro.diagram.validation.constraints.NonEmptyFieldConstraint"
+                  id="pl.zgora.uz.imgpro.diagram.validation.category.NotEmptyProperty"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="Non-Empty Property"
+                  severity="ERROR"
+                  statusCode="1">
+               <target
+                     class="DiagramElement">
+               </target>
+               <description>
+                  All items in a library model should have non empty property
+               </description>
+               <message>
+                  Empty property value in: {0}
+               </message>
+            </constraint>
+            <constraint
+                  class="pl.zgora.uz.imgpro.diagram.validation.constraints.CropOrderContraint"
+                  id="pl.zgora.uz.imgpro.diagram.validation.category.CropVignietting"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="Crop before Vignetting"
+                  severity="ERROR"
+                  statusCode="1">
+               <target
+                     class="Crop">
+               </target>
+               <description>
+                  Vignetting should be done before croping.
+               </description>
+               <message>
+                  Invalid order. Vignetting should be done before crop.
+               </message>
+            </constraint>
+            <constraint
+                  class="pl.zgora.uz.imgpro.diagram.validation.constraints.PhaseConstraint"
+                  id="pl.zgora.uz.imgpro.diagram.validation.category.InvalidPhase"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="Invalid Phase"
+                  severity="ERROR"
+                  statusCode="1">
+               <target
+                     class="DiagramElement">
+               </target>
+               <description>
+                  Check for invalid phase order in connections
+               </description>
+               <message>
+                  Invalid phase order.
+               </message>
+            </constraint>
+            <constraint
+                  class="pl.zgora.uz.imgpro.diagram.validation.constraints.UniqueFeatureGroup"
+                  id="pl.zgora.uz.imgpro.diagram.validation.category.unique.featureGroup"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="Unique Feature Group"
+                  severity="ERROR"
+                  statusCode="1">
+               <target
+                     class="ImproDiagram">
+               </target>
+               <description>
+                  FeatureGroup should have unique values in diagram
+               </description>
+               <message>
+                  Feature Groups should have unique values in diagram
+               </message>
+            </constraint>
+            <constraint
+                  class="pl.zgora.uz.imgpro.diagram.validation.constraints.UniqueCrossValidationConstraint"
+                  id="pl.zgora.uz.imgpro.diagram.validation.crossValidation"
+                  isEnabledByDefault="true"
+                  lang="java"
+                  mode="Batch"
+                  name="Unique Cross Validation"
+                  severity="ERROR"
+                  statusCode="1">
+               <target
+                     class="ImproDiagram">
+               </target>
+               <message>
+                  Type single (uniqe) value for cross validation type.
+               </message>
+               <description>
+                  Checks if cross validation type is the same in all cases
+               </description>
+            </constraint>
+         </constraints>
+           <description>
+              Impro Model Validation Constraints
+           </description>
+         
+         
+      </constraintProvider>
+   </extension>
+   <extension
+         point="org.eclipse.emf.validation.constraintBindings">
+      <clientContext
+            default="false"
+            id="pl.zgora.uz.imgpro.diagram.validation.clientContext">
+         <selector
+               class="pl.zgora.uz.imgpro.diagram.validation.ClientSelector">
+         </selector>
+      </clientContext>
+      <binding
+            category="pl.zgora.uz.imgpro.diagram.validation.category"
+            context="pl.zgora.uz.imgpro.diagram.validation.clientContext">
+      </binding>
+   </extension>
+   <extension
+         point="org.eclipse.emf.validation.ui.UIRegisteredClientContext">
+      <clientContext
+            id="pl.zgora.uz.imgpro.diagram.validation.clientContext">
+      </clientContext>
+   </extension>
+
+</plugin>

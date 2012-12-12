@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+<link rel="stylesheet" href="../book.css" charset="ISO-8859-1"
+	type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>Generacja kodu</title>
+<script language="JavaScript" type="text/javascript"
+	src="PLUGINS_ROOT/org.eclipse.help/livehelp.js">
+	
+</script>
+</head>
+<body>
+	<h1>Generacja kodu</h1>
+	<p>
+		Podczas modelowania impro generuje tylko pliki odpowiadające blokom.
+		Pliki te mogą być dowolnie modyfikowane w celu przeprowadzenia
+		dodatkowych operacji lub zmiany zachowania. Na podstawie modelu który
+		przetrzymuje pewien zestaw metadanych, generowane są skrypty
+		zawierające konkretne wartości oraz API łączące ze sobą kod ze
+		wszystkich bloków przetwarzania. <br/> <br/> Uwaga: Po generacji kodu do
+		katalogu sources dołączane jest API systemu impro. Pliki te nie
+		powinny być modyfikowane.
+	</p>
+	<h2>Generacja na podstawie modelu.</h2>
+	<p>Wraz z utworzeniem pierwszego elementu w diagramie impro
+		generuje plik modelu (rozszerzenie impro) o takiej samej nazwie jak
+		diagram. Plik ten zawiera wszystkie pola zwiazane z modelem i jest
+		wykorzystywany jako baza w procesie generacji kodu. Aby wygenerować
+		kod dla przykładu postępuj według nastepujących kroków:</p>
+	<ol>
+		<li>Przejdz do widoku <strong>Matlab Workspace Navigator</strong>
+			i zaznacz plik modelu (np impro_diagram.impro)</li>
+		<li>Aktywuj menu kontekstowe. Zaznacz opcje <strong>Run
+				as..</strong> }} <strong>Impro Model Linker</strong>
+				<p><img src="images/runas.PNG"></img></p>
+			Alternatywa w toolbarze:
+				<p><img src="images/runasalt.PNG"></img></p>
+		</li>
+		<li>Przed generacją kodu model jest walidowany pod kątem
+			poprawności. Jeśli model zawiera błędy - popraw je i powtórz operacje
+			na nowo.</li>
+		<li>Impro generuje api oraz łączy dane z modelu z kodem matlaba.
+			Po prawidłowej generacji powinien zostać otwarty główny plik
+			odpowiedzialny za uruchomienie całego procesu przetwarzania:
+			<p><img src="images/generated.PNG"></img></p>
+			</li>
+	</ol>
+
+
+</body>
+</html>
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../book.css" charset="ISO-8859-1" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <title>
+      Generacja kodu w Impro
+    </title>
+    <script language="JavaScript" type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"> </script>
+  </head>
+  <body>
+    <h1>
+      Generacja kodu w Impro
+    </h1>
+    <p>
+        Jednym z głównych celów projektowych ImPro było oddzielenie logiki związanej z przetwarzaniem od danych związanych ze specyfiką eksperymentu.
+    	W ImPro rozróżniamy trzy typy źródeł:
+    	    </p>
+    	<ol>
+    		<li><strong>Źródła statyczne</strong> generowane podczas tworzenia diagramu. Źródła te składają się z klas których nazwy odpowiadają poszczególnym elementom diagramu.
+    		Klasy te są wykorzystywane jako dostawcy zachowania (behaviour nodes) w procesie przetwarzania obrazów. Generowanie podczas tworzenia diagramu umożliwia modyfikacje 
+    		zachowania klas oraz dynamiczną rozbudowę o nowe funkcjonalności. Zachowanie zależne jest od parametrów tworzonych za pomocą diagramu.
+    		</li>
+    		<li><strong>Klasy dynamiczne.</strong> Tworzone na podstawie modelu integrują źródła statyczne dostarczając im argumenty (np. lokalizacje parametry wejściowe funkcji itp).
+    		Klasy te muszą być wygenerowane na nowo gdy zajdzie jakakolwiek zmiana w diagramie</li>
+    		<li><strong>Klasy API.</strong> Klasy które stanową podstawę do uruchomienia systemu ImPro. Są to statyczne źródła kopiowane do projektu podczas pierwszej generacji kodu.</li>
+    	</ol>
+    	
+    	
+    	
+
+  </body>
+</html>
+

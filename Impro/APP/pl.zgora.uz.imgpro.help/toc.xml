@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="Impro" topic="html/toc.html">
+   <topic label="Wprowadzenie">
+      <anchor id="gettingstarted"/>
+   </topic>
+   <topic label="Zagadnienia">
+      <anchor id="tocconcepts"/>
+   </topic>
+   <topic label="Baza wiedzy">
+      <topic href="html/learnbase/preprocessing/preprocessing.htm" label="Preprocessing">
+      </topic>
+      <topic href="html/learnbase/Segmentacja/Segmentacja.htm" label="Segmentacja">
+      </topic>
+      <topic href="html/learnbase/extractfeatures/ef.htm" label="Ekstrakcja cech">
+      </topic>
+      <topic href="html/learnbase/selekcja/selekcja.html" label="Selekcja cech">
+      </topic>
+      <topic href="html/learnbase/klasyfikacja/Classification.htm" label="Klasyfikacja">
+      </topic>
+   </topic>
+</toc>

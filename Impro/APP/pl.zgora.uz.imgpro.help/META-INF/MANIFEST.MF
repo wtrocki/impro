@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Help
+Bundle-SymbolicName: pl.zgora.uz.imgpro.help; singleton:=true
+Bundle-Version: 1.4.0.qualifier
+Bundle-Activator: pl.zgora.uz.imgpro.help.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-Vendor: Wtrocki

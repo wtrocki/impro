@@ -1,0 +1,17 @@
+<%@ jet package="pl.zgora.uz.imgpro.core.templates" class="GroupConventer" imports="pl.zgora.uz.imgpro.model.diagram.* pl.zgora.uz.imgpro.core.templates.TemplateHelper pl.zgora.uz.imgpro.core.transformation.InvocationChain java.util.* " %>
+<%  @SuppressWarnings("unchecked")
+   List<InvocationChain> invocationsChains=(List<InvocationChain>)argument;
+   List<ExtractFeatures> features=TemplateHelper.getUniqueFeatures(invocationsChains);%>
+classdef GroupConventer < handle
+    methods(Static)
+        function value = performConversion(groupName)
+        %% Lists all known features group and performs conversion to order number
+           switch groupName % gives a number for each diagnosis, it's for classification purposes
+                <% for(int i=0;i<features.size();i++) {%>
+                case '<%=features.get(i).getClassificationGroup() %>'; value = <%=i%>;
+                <% } %>
+                otherwise; error(['Unknown classification group: ' groupName]);
+           end
+        end
+    end
+end

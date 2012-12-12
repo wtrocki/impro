@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="matlipse.mconsole.win32.comMatlabInterpreter"
+         name="Win32 COM MatlabInterpreter"
+         point="com.matlab.eclipse.mconsole.matlabInterpreter">
+      <client
+            class="com.matlab.eclipse.mconsole.win32.impl.COMMatlabInterpreter"></client>
+   </extension>
+
+</plugin>

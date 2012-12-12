@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.graphiti.ui.diagramTypes">
+      <diagramType
+            description="Diagram for image processing"
+            id="pl.zgora.uz.imgpro.diagram.imageprocessing"
+            name="Diagram for Image proccesing"
+            type="ImProDiagram">
+      </diagramType>
+   </extension>
+   
+   
+   <extension
+         point="org.eclipse.graphiti.ui.diagramTypeProviders">
+      <diagramTypeProvider
+            class="pl.zgora.uz.imgpro.diagram.providers.ImproDiagramTypeProvider"
+            description="Editor for Image Processing IDE"
+            id="pl.zgora.uz.imgpro.diagram.DiagramTypeProvider"
+            name="ImproDiagramType">
+         <diagramType
+               id="pl.zgora.uz.imgpro.diagram.imageprocessing">
+         </diagramType>
+         <imageProvider
+               id="pl.zgora.uz.imgpro.diagram.providers.ImproImageProvider">
+         </imageProvider>
+         <imageProvider
+               id="org.eclipse.graphiti.examples.common.ExampleImageProvider">
+         </imageProvider>
+         <imageProvider
+               id="pl.zgora.uz.imgpro.diagram.providers.ImproImageProvider">
+         </imageProvider>
+      </diagramTypeProvider>
+   </extension>
+   
+   <extension
+         point="org.eclipse.graphiti.ui.imageProviders">
+      <imageProvider
+            class="pl.zgora.uz.imgpro.diagram.providers.ImproImageProvider"
+            id="pl.zgora.uz.imgpro.diagram.providers.ImproImageProvider">
+      </imageProvider>
+   </extension>
+  
+	
+</plugin>
+ 

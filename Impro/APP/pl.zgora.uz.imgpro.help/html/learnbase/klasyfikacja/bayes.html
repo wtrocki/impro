@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script language="JavaScript" type="text/javascript" src="../opis/PLUGINS_ROOT/org.eclipse.help/livehelp.js"> </script>
+</head>
+<body>
+<p><h1>Klasyfikatora Bayes'a </h1>
+<p><br />
+<br />
+Przyporz&#261;dkowuje nowy przypadek do jednej z klas decyzyjnych, przy czym zbi&oacute;r klas decyzyjnych musi by&#263; sko&#324;czony i zdefiniowany a priori. Ka&#380;dy przyk&#322;ad ucz&#261;cy okre&#347;lany jest on za pomoc&#261; zbioru atrybut&oacute;w warunkowych {Ci} i jednego atrybutu decyzyjnego K. Klasyfikator ten   zak&#322;ada , &#380;e ka&#380;dy przyk&#322;ad okre&#347;lony jest za pomoc&#261; tego samego zbioru atrybut&oacute;w warunkowych.
+Najbardziej prawdopodobn&#261; klas&#261;, gdzie nale&#380;y przypisa&#263; nowy obiekt, okre&#347;lony warto&#347;ciami n-atrybut&oacute;w warunkowych Cj1 = zj1, Cj2 = zj2 &hellip; Cjn = zjn (lub w skr&oacute;cie &lt; zj1, zj2 &hellip;.. zjn &gt;), jest klasa ki, kt&oacute;ra ma za zadanie maksymalizacji prawdopodobie&#324;stwa warunkowego P(ki | zj1, zj2 &hellip; zjn). Klasa ta jest maximum a posterori. </p>
+<p><img src="../opis/klasyfikator.png" width="315" height="50" />
+<p>p(C|F1,F2,&hellip;,Fn) &raquo; prawdopodobie&#324;stwo przynale&#380;no&#347;ci przyk&#322;adu do kategorii C pod warunkiem F1,F2,&hellip;,Fn. <br />
+Z &raquo; nieistotny wsp&oacute;&#322;czynnik skalowania<br />
+p(C) &raquo; og&oacute;lne prawdopodobie&#324;stwo przynale&#380;no&#347;ci przyk&#322;adu do kategorii C.<br />p(Fi|C) &raquo; prawdopodobie&#324;stwo posiadania cechy Fi przez przyk&#322;ad nale&#380;&#261;cy do kategorii C. <br />
+<p>clNB = classNaiveBayes(training, group, key, schedule);<br />
+generateResults(clNB, group, key, schedule, style, 'Naive Bayes');
+<p>
+<li>training&raquo; dane z wybranymi cechami </li>
+<li>group&raquo; przynale&#380;no&#347;&#263; do sklasyfikowanej grupy</li>
+<li>key&raquo; klucz i obszar rozk&#322;adu </li>
+<li>schedule&raquo; wykorzystywany do krzy&#380;owej validacji</li>
+<li>style&raquo; styl prezentowanego wyniku(basic, extended, full)</li>
+<li>class&raquo; wynik klasyfikacji </li>
+<p><img src="../opis/baye.jpg" width="231" height="235" />
+<p>Bibliografia:</p>
+<p>zsi.ii.us.edu.pl/~nowak/si/kNN.pdf</p>
+<p>edu.pjwstk.edu.pl/wyklady/adn/scb/wyklad9/w9.htm</p>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="com.blogspot.wtrocki.model.extensionpoints.transformation" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appinfo>
+         <meta.schema plugin="com.blogspot.wtrocki.model.extensionpoints.transformation" id="MatlabTransformation" name="com.blogspot.wtrocki.model.transformation"/>
+      </appinfo>
+      <documentation>
+         With this extension point it is possible to describe transformation for every model in Papyrus.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appinfo>
+            <meta.element />
+         </appinfo>
+      </annotation>
+      <complexType>
+         <choice minOccurs="1" maxOccurs="unbounded">
+            <element ref="transformation"/>
+         </choice>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="transformation">
+      <annotation>
+         <appinfo>
+            <meta.element labelAttribute="name" icon="icon"/>
+         </appinfo>
+         <documentation>
+            The transformation extension point allows plug-ins to contribute to papyrus tool, adding it transformation abilities. The transformation are given a unique id, an optional name and description. the transformation process is describe by a transformation module.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  id of this transformation. Used to give a unique identifier to this transformation
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  Name of this transformation. Used for dialogs, configuration windows, etc.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="icon" type="string">
+            <annotation>
+               <documentation>
+                  icon that describes this transformation
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="resource"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="description" type="string">
+            <annotation>
+               <documentation>
+                  Description of this transformation.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="module" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Java class that describes the implementation of this transformation.
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn="ITransformationModule"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="conf" type="string">
+            <annotation>
+               <documentation>
+                  dialog that provides custom dialog for configuration purpose.
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn="org.eclipse.ui.dialogs.SelectionDialog:pl.zgora.uz.imgpro.transformation.extenstion.IPropertiesDialog"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="since"/>
+      </appinfo>
+      <documentation>
+         Since release 1.7.0
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="examples"/>
+      </appinfo>
+      <documentation>
+         [Enter extension point usage example here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="implementation"/>
+      </appinfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="copyright"/>
+      </appinfo>
+      <documentation>
+         CEA LIST
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="apiInfo"/>
+      </appinfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+
+</schema>

@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Meditor Plug-in
+Bundle-SymbolicName: com.matlab.eclipse.meditor;singleton:=true
+Bundle-Version: 1.3.2.qualifier
+Bundle-Activator: com.matlab.eclipse.meditor.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.jface.text,
+ org.eclipse.ui.editors,
+ org.eclipse.core.resources,
+ org.eclipse.ui.workbench.texteditor,
+ org.eclipse.ui.views,
+ org.eclipse.ui.browser,
+ org.eclipse.ui.ide
+Bundle-ActivationPolicy: lazy
+Export-Package: com.matlab.eclipse.meditor,
+ com.matlab.eclipse.meditor.editors,
+ com.matlab.eclipse.meditor.editors.partitioner,
+ com.matlab.eclipse.meditor.util
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

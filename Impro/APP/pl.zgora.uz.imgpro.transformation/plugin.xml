@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension-point id="MatlabTransformation" name="com.blogspot.wtrocki.model.transformation" schema="schema/Transformation.exsd"/>
+   <extension
+         point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="pl.zgora.uz.imgpro.transformation.launch.LaunchTransformationDelegate"
+            id="pl.zgora.uz.imgpro.transformation.launchConfigurationType"
+            modes="run"
+            name="ImPro"
+            public="true"/>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+      <launchConfigurationTypeImage
+            configTypeID="pl.zgora.uz.imgpro.transformation.launchConfigurationType"
+            icon="icons/lcs.gif"
+            id="pl.zgora.uz.imgpro.transformation.launchConfigurationTypeImage"/>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+      <launchConfigurationTabGroup
+            class="pl.zgora.uz.imgpro.transformation.launch.LaunchTransformationTabGroup"
+            description="Apply a generation module to a impro model"
+            id="pl.zgora.uz.imgpro.transformation.launchConfigurationTabGroup"
+            type="pl.zgora.uz.imgpro.transformation.launchConfigurationType"/>
+   </extension>
+  <extension
+         point="org.eclipse.debug.ui.launchShortcuts">
+      <shortcut
+            class="pl.zgora.uz.imgpro.transformation.LaunchShortcut"
+            description="Launch ImPro source code generator"
+            icon="icons/lcs.gif"
+            id="pl.zgora.uz.imgpro.transformation.shortcut"
+            label="ImPro Model Linker"
+            modes="run">
+         <configurationType
+               id="pl.zgora.uz.imgpro.transformation.launchConfigurationType"></configurationType>
+         <contextualLaunch>
+            <enablement>
+             <with variable="selection">
+        	<iterate ifEmpty="false">
+           	 <adapt type="org.eclipse.core.resources.IResource">
+         	       <test property="org.eclipse.core.resources.name"
+                         value="*.impro"/>
+          	  </adapt>
+        	</iterate>
+   			 </with>
+            </enablement>
+         </contextualLaunch>
+      </shortcut>
+   </extension> 
+</plugin>

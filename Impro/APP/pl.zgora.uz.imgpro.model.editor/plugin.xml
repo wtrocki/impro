@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <wizard
+            id="pl.zgora.uz.imgpro.model.diagram.presentation.DiagramModelWizardID"
+            name="Structured Model Editor"
+            class="pl.zgora.uz.imgpro.model.diagram.presentation.DiagramModelWizard"
+            category="pl.zgora.uz.impro.category"
+            icon="icons/full/obj16/DiagramModelFile.gif">
+         <description>Create new impro structrured model</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="pl.zgora.uz.imgpro.model.diagram.presentation.DiagramEditorID"
+            name="Impro Model Editor"
+            icon="icons/full/obj16/DiagramModelFile.gif"
+            extensions="impro"
+            class="pl.zgora.uz.imgpro.model.diagram.presentation.DiagramEditor"
+            contributorClass="pl.zgora.uz.imgpro.model.diagram.presentation.DiagramActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

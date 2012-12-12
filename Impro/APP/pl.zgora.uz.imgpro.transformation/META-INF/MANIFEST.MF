@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Transformation plugin
+Bundle-SymbolicName: pl.zgora.uz.imgpro.transformation;singleton:=true
+Bundle-Version: 1.4.0.qualifier
+Bundle-Activator: pl.zgora.uz.imgpro.transformation.Activator
+Bundle-Vendor: Wtrocki
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.debug.ui,
+ org.eclipse.debug.core,
+ org.eclipse.ui.ide,
+ pl.zgora.uz.imgpro.model.editor
+Bundle-ActivationPolicy: lazy
+Export-Package: pl.zgora.uz.imgpro.transformation,
+ pl.zgora.uz.imgpro.transformation.dialogs,
+ pl.zgora.uz.imgpro.transformation.extenstion,
+ pl.zgora.uz.imgpro.transformation.filter,
+ pl.zgora.uz.imgpro.transformation.launch,
+ pl.zgora.uz.imgpro.transformation.validators
+Bundle-RequiredExecutionEnvironment: J2SE-1.5

@@ -1,0 +1,112 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=windows-1250"></head>
+
+<h2>SELECTION</h2>
+
+<h3>Opis</h3>
+
+<p><b>Selekcja cech –</b>  jest niezmiernie ważnym etapem w procesie przygotowywania danych do klasyfikacji. 
+Przykładowo, w wyniku przeprowadzenia eksperymentu z wykorzystaniem płytek genowych otrzymujemy informację o aktywności tysięcy lub nawet dziesiątków tysięcy genów - jest to jedna z podstawowych zalet płytek genowych. Teoretycznie, duża liczba cech, powinna dać duże możliwości przy rozróżnianiu poszczególnych klas. Jednak, jest co najmniej kilka powodów, dla których przeprowadza się redukcję dostępnych cech do niezbędnego minimum, oto niektóre z nich: 
+duża liczba cech zwiększa złożoność obliczeniową
+większość z cech jest wzajemnie skorelowana
+duża liczba cech będzie pogarszać generalizację klasyfikatora - udowodnione jest, że wyższy stosunek liczby próbek w zbiorze treningowym, do liczby wolnych parametrów klasyfikatora powoduje polepszenie generalizacji. Natomiast duża liczba cech bezpośrednio przekłada się na dużą liczbę parametrów klasyfikatora (np. wagi w klasyfikatorze liniowym, synaptyczne wagi w sieciach neuronowych)
+duża liczba cech wpłynie na pogorszenie estymacji błędu klasyfikatora</p>
+<br>
+<br>
+
+
+
+<center><p><b>Definicja</b></p>
+<p>Biorąc pod uwagę zestaw funkcji X ={xi; i=1..N} znaleźć podzbiór YM = {xj1,xi2,...,xiM} ,gdzie M mniejsze niż N ,który optymalizuje obiektywną funkcja J (Y).</p></center>
+
+<center><img src="Selekcja.jpg" alt="Forward Selection" /></center>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<p><h3>Funkcja celu –</h3> </p>
+<p>
+Jest to funkcja, oceniająca podzbiory kandydatów i zwracająca miare ich "dobroci".Funkcje celu są podzielone na dwie grupy: </P>
+<p>
+<p>Filtry-
+Funkcja celu ocenia podzbiory cech przez zawarte w niech informacyje, typowe międzyklasowych odległości, statystyczne zależności lub środki informacyjno-teoretyczny. </P>
+
+<P>Wrappery-
+Funkcja celu tworzy klasyfikator wzóru, który ocenia podzbiory funkcji przez ich predykcyjną dokładność (ocena rozpoznania na danych testowych) przez statystyczny resampling lub kroswalidację.</P>
+</p>
+<br>
+<br>
+
+<p><h3>Strategie przeszukiwania dzielimy na:</h3></p> 
+
+<b> Algorytmy wykładnicze</b> 
+<p> Te algorytmy oceniają liczbę podzbiorów, które wykładniczo wraz z wymiarowością obszaru przeszukiwań. Najbardziej znane algorytmy to:
+ Exhaustive Search, Branch and Bound, Approximate Monotonicity with Branch and Bound, Beam Search</p>
+<br>
+<b> Algorytmy stochastyczne</b> 
+<p>Algorytmy te, zwane także losowymi, uwzględniają losowość podczas procedury przeszukiwania, aby uniknąc minimów lokalnych. Najbardzej znane przykłady to:
+ Random Generation plus Sequential Selection, Simulated Annealing, Algorytmy genetyczne.
+</p>
+
+<p>Algorytm genetyczny - rodzaj algorytmu przeszukującego przestrzeń alternatywnych rozwiązań problemu w celu wyszukania rozwiązań najlepszych.
+Sposób działania algorytmów genetycznych nieprzypadkowo przypomina zjawisko ewolucji biologicznej. </p>
+
+<br>
+<b> Algorytmy sekwencyjne</b> 
+<p>Ich działanie opiera się na dodawaniu i usuwaniu cech sekwencyjnie, niestety mają one tendencje do stawania w minimach lokalnych. Najbardzej znane przykłady:
+ Sequential Forward Selection(przykład opisany poniżej), Sequential Backward Selection
+ Plus-l Minus-r Selection, Bidirectional Search, Sequential Floating Selection.
+</p>
+
+<p>Sekwencyjna selekcja postępująca (SFS - Sequential forward selection) - algorytm polegający na wyborze najlepszej dyskryminującej cechy a następnie dobieraniu kolejnych cech tworzących podzbiory o największej wartości miary dyskryminacji.</p>
+<p> Schemat postępowania: </p>
+<p>a) wyznaczamy wartość miary dyskryminacji dla każdej cechy osobno, a następnie 
+wybieramy cechę dającą największą wartość tej miary.</p>
+<p>b) wyznaczamy wartość miary dyskryminacji dla wszystkich możliwych dwu 
+wymiarowych wektorów zawierających cechę wybraną w  poprzednim punkcie. 
+Wybieramy wektor dający największą wartość miary dyskryminacji.</p>  
+<p>c) kontynuujemy dodawanie kolejnych cech, aż do momentu wybrania p cech.</p>
+<br>
+<br>
+<h3><p> Zestawienie cech </p></h3> 
+
+<b> Algorytmy stochastyczne</b> 
+<p>Dokłaość: Zawsze znajdują optymalne rozwiązanie
+</p>
+<p>Złożoność: Wykładnicza
+</p>
+<p>Zalety: Wysokoa dokładność
+</p>
+<p>Wady: Wysoka złożoność
+</p>
+<br>
+
+<b> Algorytmy Sekwencyje</b> 
+<p>Dokłaość: Dobra
+</p>
+<p>Złożoność: Kwadratowa
+</p>
+<p>Zalety: Szyki i prosty
+</p>
+<p>Wady: Brak backtrakingu
+</p>
+<br>
+
+<b> Algorytmy stochastyczne</b> 
+<p>Dokłaość: Dobra przy dobrze dobrancyh parametrach
+</p>
+<p>Złożoność: Niska
+</p>
+<p>Zalety: Stworzone aby ucieć z minimów lokalnych
+</p>
+<p>Wady: Nie jest łątwo dobrać odpowiednie parametry
+</p>
+<br>
+
+<h4>References</h4>
+<a href>http://en.wikipedia.org/wiki/Feature_selection</a href>
+
+
+
+

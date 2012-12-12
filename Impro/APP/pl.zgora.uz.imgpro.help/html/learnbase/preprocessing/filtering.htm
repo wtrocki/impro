@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../book.css" charset="ISO-8859-1" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <title>
+		Filtracja obrazu
+    </title>
+    <script language="JavaScript" type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"> </script>
+  </head>
+  <body>
+    <h1>
+		Filtracja obrazu
+    </h1>
+	 <p>
+		Filtracja obrazów jest zaliczana do metod <a href='http://pl.wikipedia.org/wiki/Cyfrowe_przetwarzanie_sygnałów'>cyfrowego przetwarzania sygnałów</a>. Filtracja jest operacją matematyczną na <a href='http://pl.wikipedia.org/wiki/Piksel'>pikselach</a> obrazu źródłowego w wyniku której uzyskiwany jest nowy, przekształcony obraz. Filtrację określa się jako przekształcenie kontekstowe, gdyż dla wyznaczenia nowej wartości piksela obrazu docelowego potrzebna jest informacja z wielu pikseli obrazu źródłowego.
+	 </p>
+     <p>
+	  Filtrację obrazów cyfrowych w dziedzinie przestrzennej uzyskuje się wykorzystując operację podobną do <a href='http://pl.wikipedia.org/wiki/Splot_sygna%C5%82%C3%B3w#Realizacja_splotu_dla_sygna.C5.82.C3.B3w_dwuwymiarowych_.28np._obraz.C3.B3w.2C_itd..29'>splotu sygnałów</a> dwuwymiarowych
+	  która oblicza nową wartość piksela obrazu na podstawie wartości pikseli sąsiadujących.
+	  Każda wartość piksela sąsiadującego ma przypisaną odpowiednią wagę (zgodnie z wartością w masce filtru) i
+	  wpływa na końcową wartość piksela obrazu po filtracji wg zależności:
+	  <img src='./images/convultion.png' />
+	  <ul>
+		<li>p - wartość piksela po filtracji,</li>
+		<li>pz - kolejna wartość piksela obrazu oryginalnego,</li>
+		<li>pf - kolejna wartość wagi filtru,</li>
+		<li>K - suma wartości wag filtru, lub 1 gdy suma wynosi 0.</li>
+	  </ul>
+	  Funkcją współczynnika K jest utrzymanie wyjściowej skali wartości pikseli zgodnej ze skalą wejściową. Gdyby nie jego użycie obraz mógłby ulec, przy pewnych filtrach, znacznemu rozjaśnieniu lub pociemnieniu.
+	 </p>
+	 <h3>Sposoby zapisu maski</h3>
+	 <p>
+		Sposoby zapisu maski filtracji liniowej:
+		<ul>
+			<li>Macierz wag - po lewej</li>
+			<li>Maska filtracji z współczynnikiem domyślnym (suma elementów) - po prawej</li>
+		</ul>
+		<img src='./images/mask_notation.png'/>
+	 </p>
+	 <h3>Jak działa splot dyskretny</h3>
+	 <p>
+		Wprzypadku dyskretnego splotu jądro (maska fltra) jest kwadratową tablicą zawierającą współczynniki fltra. Wspóaczynniki mogą przyjmowaą zarówno dodatnie jak i ujemne wartości. Liczba
+		wierszy i kolumn jest najczęściej nieparzysta, aby istniaa element centralny.
+		Na fltrowany piksel nakładana jest maska fltra (jądro splotu) w taki sposób, żeby
+		element centralny pokrywał się z fltrowanym pikselem. Operacja fltrowania polega na pomno-
+		żeniu współczynników fltra przez wartość znajdujących się pod nimi pikseli a następnie dodaniu
+		wyników poszczególnych mnożeń i podzieleniu wyniku przez współczynnik skalujący (sumę wszystkich wag lub 1 jeśli suma wag wynosi 0).
+		Wynik działania określa wartość filtrowanego piksela w obrazie wynikowym. Po przesunięciu maski do kolejnego piksela cały proces jest powtarzany.
+	 </p>
+	 <img src='./images/filtering_idea.png' />
+	 <h2>
+		klasyfikacja filtrów
+	 </h2>
+	 <p>
+		Filtry obrazu możemy podzielić na:
+		<ul>
+			<li>filtry wygładzające (<a href='./filtering_lowpass.htm'>dolnoprzepustowe</a>)
+				<ul>
+					<li>liniowe</li>
+					<li>nieliniowe</li>
+				</ul>
+			</li>
+			<li>filtry wyostrzające (<a href='./filtering_highpass.htm'>górnoprzepustowe</a>)
+				<ul>
+					<li>gradientowe</li>
+					<li>laplasjanowe</li>
+				</ul>
+			</li>
+		</ul>
+	 </p>
+
+    <h2>Bibliografia</h2>
+	<ul>
+		<li>Gonzalez R., Woods R., Digital Image Processing, Second Edition, Prentice Hall, 2001, ISBN 0-201-18075-8</li>
+		<li><a href='http://pl.wikipedia.org/wiki/Filtracja_obrazów'>http://pl.wikipedia.org/wiki/Filtracja_obrazów</a></li>
+		<li><a href='http://korzen.org/wsisiz/przetwarzanie%20obrazow/wyklad/Wykl03pdf.pdf'>http://korzen.org/wsisiz/przetwarzanie%20obrazow/wyklad/Wykl03pdf.pdf</a></li>
+		<li><a href='http://www.uz.zgora.pl/~pstec/files/filtracja.pdf'>http://www.uz.zgora.pl/~pstec/files/filtracja.pdf</a></li>
+		<li><a href='http://astrophysics.fic.uni.lodz.pl/medtech/dodatki/metpo.html'>http://astrophysics.fic.uni.lodz.pl/medtech/dodatki/metpo.html</a></li>
+	</ul>
+  </body>
+</html>
+

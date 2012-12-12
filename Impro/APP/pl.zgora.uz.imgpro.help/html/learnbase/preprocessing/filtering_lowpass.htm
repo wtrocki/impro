@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../book.css" charset="ISO-8859-1" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <title>
+
+    </title>
+    <script language="JavaScript" type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"> </script>
+  </head>
+  <body>
+    <h1>
+       Filtry dolnoprzepustowe
+    </h1>
+	 <p>
+	  Działanie tego typu filtrów opiera się na usuwaniu elementów obrazu o wysokiej częstotliwości (szczegółów, np. dużych
+	  różnic w kolorach pomiędzy sąsiadującymi pikselami) i przepuszczaniu elementów o niskiej częstotliwości (ogólnych
+	  kształtów, bez szczegółów). Ponieważ większość szumów występujących w obrazach zawiera się w wysokich częstotliwościach,
+	  filtry te przeważnie wykorzystuje się właśnie do eliminacji zakłóceń. Właściwie dopasowując rząd macierzy filtru można
+	  usuwać zakłócenia różnej wielkości, ograniczając przy tym utratę szczegółów(wysokich częstotliwości) w odfiltrowywanym
+	  obrazie. Filtry dolnoprzepustowe to zazwyczaj filtry uśredniające z pewnymi wagami. Poniżej znajduje się kilka przykładów
+	  filtrów dolnoprzepustowych o macierzy trzeciego rzędu (wielkość maski 3x3):
+	 </p>
+	 <img src=./images/mask_smoothing.png />
+	 <h2>
+		Filtry statystyczne
+	 </h2>
+	 <p>
+	  Wyróżnia je fakt, iż nie posiadają stałej maski jak w przypadku innych filtrów. Nowe wartości pikseli są wyliczane np. na
+	  drodze sortowania pikseli obrazu źródłowego w obrębie maski. Po sortowaniu, w zależności od rodzaju filtru, wybierana
+	  jest wartość środkowa, maksymalna, bądź minimalna. Są również filtry które określają wartośćpiksela wedługinnych
+	  zdefiniowanych wcześniej procedur.
+	 </p>
+	 <h3>Filtr medianowy</h3>
+	 <p>
+		Filtr medianowy jest przykładem filtru nieliniowego. Stosuje się go przede wszystkim do usuwania zakłóceń punktowych
+		typu pieprz i sól, potrafi on wtedy usunąć szum przy minimalnej utracie jakości obrazu lub całkowicie bez strat.
+		Działanie tego fltra polega na umieszczeniu wszystkich punktów znajdujących się pod maską
+		w posortowanej liście. Następnie z listy wybierany jest element środkowy i on jest zapisywany
+		do nowego obrazu. Zaletą tego fltra jest dobre usuwanie szumu przy zachowaniu ostrości krawędzi.
+		Stosowanie masek o dużych średnicach nadaje obrazowi wyglądu, jak by był namalowany farbami.
+	 </p>
+	 <h3>Filtr maksymalny i minimalny</h3>
+	 <p>
+		Do obrazu wynikowego jest kopiowana minimalna lub maksymalna wartość przyjmowana przez punkty sąsiadujące z punktem
+		"wybranym" przez środek maski. Filtrowi minimalnemu towarzyszy "erozja" (zmniejszenie) wielkości obiektów obrazu,
+		maksymalnemu zaś - ich "dylatacja" (powiększenie).
+	 </p>
+	 <h3>Usuwanie kurzu (despeckle)</h3>
+	 <p>
+		Główną ideą tego filtra jest usunięcie pikseli, które różnią się w istotny sposób od swoich sąsiadów.
+		Filtr taki można zrealizować porównując wartość piksela znajdującego się w centrum maski
+		ze średnią wartością pozostałych pikseli. Jeśli absolutna różnica pomiędzy nimi jest większa od
+		pewnego ustalonego progu jako nową wartość zapisuje się średnią wartość pikseli (bez centralnego)
+		w przeciwnym przypadku przepisuje się piksel bez zmian. Dla małych wartości progu jego działanie
+		prawie nie różni się od fltra rozmywającego. Dla dużych wartości działanie może byc niezauważalne.
+	 </p>
+	<h2>Bibliografia</h2>
+	<ul>
+		<li><a href='http://pl.wikipedia.org/wiki/Filtracja_obrazów'>http://pl.wikipedia.org/wiki/Filtracja_obrazów</a></li>
+		<li><a href='http://korzen.org/wsisiz/przetwarzanie%20obrazow/wyklad/Wykl03pdf.pdf'>http://korzen.org/wsisiz/przetwarzanie%20obrazow/wyklad/Wykl03pdf.pdf</a></li>
+		<li><a href='http://www.uz.zgora.pl/~pstec/files/filtracja.pdf'>http://www.uz.zgora.pl/~pstec/files/filtracja.pdf</a></li>
+		<li><a href='http://astrophysics.fic.uni.lodz.pl/medtech/dodatki/metpo.html'>http://astrophysics.fic.uni.lodz.pl/medtech/dodatki/metpo.html</a></li>
+		<li><a href=''></a></li>
+
+	</ul>
+  </body>
+</html>
+

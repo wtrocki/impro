@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+<link rel="stylesheet" href="../book.css" charset="ISO-8859-2"
+	type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>Pierwszy model</title>
+<script language="JavaScript" type="text/javascript"
+	src="PLUGINS_ROOT/org.eclipse.help/livehelp.js">
+	
+</script>
+</head>
+<body>
+	<h1>Pierwszy model</h1>
+	<p>
+		Pliku diagramu są rozpoznawane za pomocą rozszerzenia diagram. Projekt
+		może zawierać wiele diagramów, ale nie jest to zalecane ze względu na
+		wspólny katalog sources do którego będa trafiać wygenerowane źródła.
+		Domyślnie kreator nowego diagramu otwiera go po zakończeniu. Jeśli
+		plik nie jest otwarty to wyszukaj go w <strong>Matlab
+			Workspace Navigator</strong> i otwórz za pomocą menu kontekstowego.
+	</p>
+	<h2>Edytor diagramu</h2>
+	<p>
+		<img src="images/workbench.PNG"></img>
+	</p>
+	<p>Elementy związane z tworzeniem diagramu</p>
+	<ol>
+		<li>A - <strong>DropBox</strong> miejsce do którego przeciągamy
+			bloki z palety.</li>
+		<li>B - <strong>Paleta</strong> zawierająca wszystkie możliwe
+			elemety diagramu.</li>
+		<li>C - <strong>Preferencje</strong> widok preferencji dla
+			zaznaczonego elementu</li>
+	</ol>
+
+	<h2>Tworzenie modelu</h2>
+	<p>
+		W poniższym przykładzie zbudujemy prosty model którego zadaniem będzie
+		wczytanie zestawu zdjęć testowych, przeprowadzenie segmentacji oraz
+		ekstrakcji cech. <br /> <br /> <strong>Uwaga</strong>: Przed
+		utworzeniem pierwszego modelu należy dodać do niego zestaw
+		analizowanych zdjęć. Na potrzeby tego wstępu możesz użyć <a
+			href="../images.zip">zestawu przykładowych zdjęć</a> które należy
+		przekopiować do katalogu images.
+	</p>
+	<ol>
+		<li>Przejdz do palety i przeciągnij do dropboxa element <strong>DirInput</strong>
+		</li>
+		<li>Aktywuj menu kontekstowe i wykonaj walidacje modelu za pomocą
+			akcji <strong>Validate</strong>. W wyniku walidacji modelu powinien
+			pokazać się nam błąd związany z brakiem katalogu w którym powinny
+			znajdować się zdjęcia</li>
+		<li>Aby go poprawić przejdź do widoku properties i podaj katalog
+			w którym znajdują się przykładowe zdjęcia.
+			<p>
+				<img src="images/directory.PNG"></img>
+			</p></li>
+		<li>Postępując analogicznie dodaj do diagramu elementy <strong>SegAT</strong>
+			oraz <strong>ExtractFeatures</strong>.</li>
+		<li>Połącz bloki poprzez przeciągnięcie kursora pomiędzy
+			kwadratami w blokach. <br /> <br />Model powinien wyglądać
+			następująco:
+			<p>
+				<img src="images/simple-model.PNG"></img>
+			</p>
+		</li>
+		<li>Zaznacz blok <strong>Extract features</strong> i przejdz do
+			preferencji</li>
+		<li>W polu classification group wpisz nazwę dla grupy
+			klasyfikacji np <strong>test</strong>. W naszym przypadku nie ma ona
+			większego znaczenia gdyż nie wykorzystujemy bloków klasyfikacji. W
+			praktyce będziemy zawsze mieli więcej niż jedną grupę (np kobieta,
+			mężczyzna itp).</li>
+		<li>Mając już model możemy podejrzeć jego źródła, które domyślnie
+			znajdują się w katalogu sources. Plik źródłowy związany z danym
+			blokiem otwieramy poprzez quick menu, dwuklik na elemencie diagramu
+			lub menu kontekstowe.
+			<p>
+				<img src="images/quickmenu.PNG">
+			</p></li>
+		<li>Korzystając z okazji wyedytujemy jeden z plików źródłowych
+			zmieniając jego zachowanie. Aby to zrobić przejdź do kodu źródłowego
+			bloku <strong>Extract Features</strong> i usuń wszystkie pola w
+			strukturze od lini 77 do 92 (f.Area... ... var(f.DistToCentroid);)
+			<p>
+				<img src="images/editor.PNG"></img>
+			</p>
+		</li>
+		<li>Przeprowadz walidację i upewnij się ze edytor jest zapisany.</li>
+	</ol>
+	
+	<h2>Źródła</h2>
+	<p>
+		Tworząc model impro generuje dynamicznie pliki klas matlaba
+		odpowiedzialne za obsługę poszczególnych bloków. Klasy te są nazywane
+		statycznymi gdyż nie są one generowane na podstawie modelu, a co za
+		tym idzie mają ogólny charakter. Na podstawie tak prostego modelu
+		jesteśmy w stanie wygenerować pełen kod źródłowy wraz z API oraz
+		dynamicznie wygenerowanymi źródłami. Aby w pełni zrozumieć generowanie
+		źródeł przejdź do <a href="../concepts/StaticDynamicContent.htm">Opisu
+			tworzenia API</a>
+	</p>
+	<p>
+		Elementy modelu przechowywane są w osobnym pliku o rozszerzeniu <strong>impro</strong>.
+		Edytor ten pokazuje nam pełną strukturę modelu wraz z  i powinien być wykorzystywany tylko w celach poglądowych.
+		Edycja modelu poprzez ten edytor nie jest zalecana.
+	</p>
+	<p>
+		<img src="images/editormodel.PNG"></img><br/><br/>
+	</p>
+</body>
+</html>
+

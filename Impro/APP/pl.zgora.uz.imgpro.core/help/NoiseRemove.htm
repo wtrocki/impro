@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../book.css" charset="ISO-8859-1" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <title>
+      Remove noise
+    </title>
+    <script language="JavaScript" type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"> </script>
+  </head>
+  <body>
+    <h1>
+        Usunięcie szumów
+    </h1>
+    <p><img src="./images/noise.png"></img>
+    </p>
+    <h2>Opis</h2>
+     <p>
+      Usuwa szum z obrazów poprzez zastosowanie <a href='../preprocessing/filtering.htm'>filtru</a>
+	  dolnoprzepustowego (rozmycie) a następnie górnoprzepustowego (wyostrzenie).
+     </p>
+	 <p>
+	  Zastosowane operacje filtracji obliczają nową wartość piksela obrazu na podstawie wartości pikseli sąsiadujących. Każda wartość piksela
+	  sąsiadującego ma przypisaną odpowiednią wagę (zgodnie z wartością w masce filtru) i wpływa na końcową wartość piksela obrazu po filtracji.
+	 </p>
+	 <h3>
+		Filtry dolnoprzepustowe
+	 </h3>
+	 <p>
+	  Działanie tego typu filtrów opiera się na usuwaniu elementów obrazu o wysokiej częstotliwości (szczegółów, np. dużych różnic w kolorach pomiędzy sąsiadującymi pikselami) i przepuszczaniu elementów o niskiej częstotliwości (ogólnych kształtów, bez szczegółów). Ponieważ większość szumów występujących w obrazach zawiera się w wysokich częstotliwościach, filtry te przeważnie wykorzystuje się właśnie do eliminacji zakłóceń. Właściwie dopasowując rząd macierzy filtru można usuwać zakłócenia różnej wielkości, ograniczając przy tym utratę szczegółów(wysokich częstotliwości) w odfiltrowywanym obrazie. Filtry dolnoprzepustowe to zazwyczaj filtry uśredniające z pewnymi wagami.
+	 </p>
+	 <p>
+	  Do realizacji filtru dolno przepustowego (rozmycia) zastosowano maskę w postaci:
+	 </p>
+	 <p>
+	  <img src="./images/gauss_mask.png" />
+	 </p>
+	 <h3>
+		Filtry górnoprzepustowe
+	 </h3>
+	 <p>
+	  Filtry te działają w sposób odwrotny do filtrów dolnoprzepustowych, tłumią one niskoczęstotliwościowe elementy obrazu, wzmacniają natomiast elementy o wysokich częstotliwościach (szczegóły). Wynikiem działania tego typu filtrów jest podkreślenie, uwypuklenie elementów obrazu o dużej częstotliwości poprzez zwiększenie ich jasności, koloru, itp. Dla obrazu jako całości efektem jest zazwyczaj zwiększenie kontrastu poprzez podkreślenie ostrych krawędzi obiektów.
+	 </p>
+	 <p>
+	  Do realizacji filtru górno przepustowego (wyostrzenia) użyto w tym przypadku maski:
+	 </p>
+	 <p>
+	  <img src="./images/sharpen_mask.png" />
+	 </p>
+    <h2>Wejścia/Wyjścia</h2>
+    <ul>
+		<li><strong>Wejście</strong> - lista obrazów do przetworzenia</li>
+		<li><strong>Wyjście</strong> - lista obrazów po operacji usunięcia szumów</li>
+	</ul>
+  </body>
+</html>
+

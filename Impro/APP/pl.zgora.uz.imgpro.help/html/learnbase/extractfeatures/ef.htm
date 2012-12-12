@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../book.css" charset="ISO-8859-1" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1250">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <title>
+      
+    </title>
+    <script language="JavaScript" type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"> </script>
+  </head>
+  <body>
+    <h1>Ekstrakcja Cech</h1>
+    <p></p>
+    <h2>Opis</h2>
+	
+	<p>
+	Ekstrakcja cech stosowana jest w celu wychwycenia najważniejszych cech charakterystycznych z danego zbioru posegmentowanych obrazów oraz redukcji wymiarowości danych. Jest to jeden z etapów odkrywania wiedzy w danych nazywany również wstępnym przewarzaniem, który ma na celu wykrycie różnych prawidłowości w zgromadzonych danych co umożliwia dalsze zakwalifikowanie grup do poszczególnych klas. Pozwala to nam na prace z danymi o milionach cech oraz na szybsze i łatwiejsze do zrozumienia algorytmy uczące się.
+	</p>
+	<p>
+	Ogólny schemat przetwarzania i analizy:
+	</p>
+	<pre>
+	1. Przygotowanie i interpretacja obrazów do obróbki.
+	Akwizycja danych jako pierwszy etap przetwarzania. Obejmuje on przechwycenie danych redukcję szumów i ich interpretację.
+	
+	2. Segmentacja obrazu
+	Jest to podział obrazu na jednorodne obszary ze względu na swoje właściwości. Ma to na celu zredukowaie rozmiaru przechowywanych danych oraz wyszczególnienie istotnych cech, które będą podlegać badaniu.
+	
+	3. Ekstrakcja cech
+	Wychwycenie najważniejszych cech ze zbiory posegmentowanych obrazów.
+	
+	4. Selekcja
+	Polega na eliminacji cech o najgorszych właściwościach lub najmniej istotnych w celu zredukowania ich wymiarowości.
+	
+	5. Klasyfikcja
+	Klasyfikacja jest przyporządkowaniem zbioru cech danych do konkretnych wzorców charakteryzujących konkretne klasy.
+	</pre>
+	<p>Ogólnym zadaniem rozpoznawania obrazów jest rozpoznanie i zakwalifikowanie różnego typu obiektów do pewnych klas. Wykorzystuje się do tego celu różne algorytmy, które mają prawidłowo je zakwalifikować do odpowiedniej klasy.</p>
+	<p>W dzisiejszych czasach, wśród wielu zbiorów zajmujących ogroną ilość zasobów dyskowych istotne stało się aby przeszukiwanie danych odbywało się jak najszybciej i najdokładniej. Algorytmy przeszukujące i rozpoznawające powinny działać szybciej.</p>
+	<p>W tym celu zaistniała potrzeba selekcji i ekstrakcji cech które umożliwiają redukcję wymiarowości i wyodrębnienie najważniejszych cech, które następnie przyczynią się do przyspieszenia analizy danych.</p>
+	<p>Badane obiekty posiadają różny charakter i wyodrębniane z nich cechy uzależnione są od konkretnych potrzeb. Nie można ustalić stałych cech dla wszystkich istniejących obiektów w otaczającej nas rzeczywistości a maszyna uczy się ich rozpoznawania na dostarczonych przykładach. Na podstawie tych przykładów może następnie dokonać obliczeń przy podejmowaniu decyzji o przynależności otrzymanych danych do konkretnych klas.</p>
+	<p>Istnieje wiele metod rozpoznawania obrazów, lecz nie istnieje jeszcze automatyzacja w podejmowaniu decyzji, które cechy są najistotniejsze, w tym miejscu decyduje już o tym specjalisca z danej dziedziny, która jest badana.</p>
+	<p>Po wykonaniu wstępnej segmentacji obrazu otrzymujemy obraz wynikowy na podstawie którego łatwiej jest wydzielić cechy obiektów wyodrębnionych na tym etapie. Obraz wynikowy może być w postaci binarnej, w tym przypadku sytuacja jest najkorzystniejsza gdyż cechy mogą być interpretowane jako liczby lub określać istnienie danej cecy lub, jej brak.</p>
+	<h2>Cechy</h2>
+	<p>Cechy takich obiektów muszą się wyróżniać sposród innych klas i można je podzielić na kilka kategorii:</p>
+	<ul>
+	<h4>Kształt obiektu i obszar.</h4>
+	<ul>
+	<li> Proste cechy geometryczne</li>
+	<li> Współczynniki kszatałtu</li>
+	<li> Krawędzie</li>
+		Linia brzegowa wyznacza granicę obiektu i decyduje o jego kształcie umożliwiając wyznaczenie pozostałych cech geometrycznych.
+	<li> Przybliżenie wielekątami</li>
+		Przybliżenie kształtu można dokonywać przy pomocy funkcji sklejanych umożliwiające opis kształtu za pomocą niewielkiej liczby parametrów. Innym sposobem jest synktatyczna reprezentacja konturów polegaąca na łączeniu ksztaltów podstawowych tak aby reprezentowały dany obiekt.
+	<li> Obwód</li>
+		Jest odległością od kolejnych jego elementów składowych krawędzi.
+	<li> Powierzchnia</li>
+		Najcześciej liczona w ilości pikseli przypdających na obszar.
+	<li> Sygnatura</li>
+		Są to kody kształtów odwzorowujące brzeg obszaru.
+	<li> Szkielet</li>
+		Wyznaczany jest za pomocą osi środkowej , która jest zbiorem punktów obiektu, które mają więcej niż jeden punkt brzegu połozony najbliżej punku osi.
+	<li> Wypukłość</li>
+		Jest obszarem o najmniejszym polu powierzchni, na którym można opisać fiugurę wypukłą.
+	<li> Definicja odległości</li>
+		<p>Odległość Euklidesa,<img src="./images/odl-euklidesowa.jpg"></img></p>
+		<p>Odległość Canberra,<img src="./images/odl-canberra.jpg"></img></p>
+		<p>Odlełość Czybyszewa,<img src="./images/odl-czybyszewa.jpg"></img></p>
+		<p>Odległość blokowa<img src="./images/odl-blokowa.jpg"></img></p>
+	<li>- Momenty geometryczne</li>
+		Kształt ciała i rozkład odległości jego poszczególnych punktów od osi obrotu.
+	<li>- Rzuty</li>
+	</ul>
+
+	<h4>Analiza tekstury.</h4>
+	<ul>
+	<li> Opis tekstury</li>
+	<li> Powtarzalność</li>
+	<li> Kolor, jasność</li>
+	<li> Metody widmowe</li>
+	<li> Macierz współwystąpień</li>
+	</ul>
+
+	<h4>Analiza dźwieku.</h4>
+	<ul>
+	<li> Sygnały na podstawie amplitudy</li>
+	<li> parametry akustyczne sygnału, lokalizacja i czasowa zmienność</li>
+	<li> Momenty widmowe</li>
+	</ul>
+
+	<h4>Zliczanie obiektów.</h4>
+		Ilość wystąpień obiektów na badanycm obszarze. Gdy obiekty mogą nakładać się nawzajem, czasem potrzebna jest detekcja brzegów oraz można skorzystać z segmentacji wododziałowej.
+		
+	<h4>Topoligiczne cechy kszatałtu</h4>
+		Są t oprzekształcenia niezmienne względem transformacji np. liczba Eulera, ilość dziur itp.
+		Jest to dodatkowy sposów na opis kształtu obiektów.
+
+	<h2>Bibliografia</h2>
+	<ul>
+	<li>A.Marciniak - wykłady, rozpoznawanie obrazów - http://www.uz.zgora.pl/~amarcini/wiki/</li>
+	<li>Krzysztof Krawiec - Przetwarzanie i Rozpoznawanie Obrazów</li>
+	<li>Paweł Malinowski - Selekcja i ekstrakcja cech</li>
+	<li>R.Tadeusiewicz,, M.Flaśiński - Rozpoznawanie obrazów, PWN 1991</li>
+	<li>http://microarray.republika.pl/index.html - "Metody klasyfikacji we wspomaganiu diagnostyki nowotworów techniką płytek genowych"</li>
+	<li>http://pl.wikipedia.org/wiki/Eksploracja_danych</li>
+	</ul>	
+  </body>
+</html>

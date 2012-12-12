@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../book.css" charset="ISO-8859-1" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <title>
+
+    </title>
+    <script language="JavaScript" type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"> </script>
+  </head>
+  <body>
+    <h1>
+       Przetwarzanie punktowe (bezkontekstowe, anamorficzne)
+    </h1>
+	 <p>
+	  Poszczególne elementy obrazu (punkty) modyfikowane są niezależnie od stanu elementów sąsiadujących.
+	  Dzięki temu są wykonywane stosunkowo szybko i łatwo nawet na bardzo dużych obrazach.
+	  Przykładowo: utworzenie negatywu, przyciemnienie lub rozjaśnienie wybranych punktów obrazu, zmiana
+	  palety barw z wykorzystaniem tablic korekcji LUT.
+	 </p>
+	 <p>
+	  Cechy przekształceń punktowych:
+	  <ul>
+		<li>Modyfikowana jest jedynie wartość punktów obrazu, relacje geometryczne pozostają bez zmian</li>
+		<li>Operacje mają za zadanie lepsze uwidocznienie pewnych treści jużzawartych w obrazie. Nie wprowadzają żadnych nowych informacji do obrazu</li>
+		<li>Jeśli stosowana jest funkcja ściśle monotoniczna operację są zazwyczaj odwracalne. Gdy funkcja nie jest ściśle monotoniczna następuje utrata części informacji.</li>
+	  </ul>
+	  Przekształcając anamorficznie obraz obliczamy wynik funkcji odwzorowania f:
+	  <br/> L'(m,n) = f(L(m,n)), gdzie:
+	  <ul>
+		<li>L(m,n) – punkty obrazu źródłowego</li>
+		<li>L'(m,n) – punkty obrazu wynikowego</li>
+		<li>f() – funkcja odwzorowania</li>
+	  </ul>
+	 </p>
+	<h2>Przykłady przekształceń bezkontekstowych</h2>
+	<p>
+		Operator identyczności:
+	</p>
+	<img src='./images/identity.png' />
+	<p>
+		Negacja: q(m,n) = -p(m,n)
+	</p>
+	<img src='./images/negation.png' />
+	<p>
+		Binaryzacja:
+	</p>
+	<img src='./images/thresh.png' />
+	<p>
+		Odwrócona binaryzacja:
+	</p>
+	<img src='./images/thresh_inv.png' />
+	<p>
+		Binaryzacja przedziałami:
+	</p>
+	<img src='./images/thresh_pass.png' />
+	<p>
+		Operatory progowania z zachowaniem poziomów szarości:
+	</p>
+	<img src='./images/level_pass.png' />
+	<p>
+		Rozciągnięcie dynamiki:
+	</p>
+	<img src='./images/strech.png' />
+	<p>
+		Ograniczenie ilości poziomów szarości:
+	</p>
+	<img src='./images/level_reduction.png' />
+	<p>
+		Oraz operacje dwuargumentowe takie jak dodawanie obrazów, odejmowanie, mnożenie - korekcja nieliniowości, tworzenie okna.
+	</p>
+	<h2>Bibliografia</h2>
+	<ul>
+		<li><a href='http://korzen.org/wsisiz/przetwarzanie%20obrazow/wyklad/Wykl03pdf.pdf'>http://korzen.org/wsisiz/przetwarzanie%20obrazow/wyklad/Wykl03pdf.pdf</a></li>
+		<li><a href='http://ics.p.lodz.pl/~adamwoj/WSFI/PO/2_wyklad_PO.pdf'>http://ics.p.lodz.pl/~adamwoj/WSFI/PO/2_wyklad_PO.pdf</a></li>
+	</ul>
+  </body>
+</html>
+

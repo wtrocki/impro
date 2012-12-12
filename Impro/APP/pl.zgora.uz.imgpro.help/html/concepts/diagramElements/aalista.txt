@@ -1,0 +1,13 @@
+classify.htm
+crop.htm
+dirinput.htm
+extract.htm
+fullselection.htm
+histstretch.htm
+multi.htm
+noise.htm
+segat.htm
+segcln.htm
+segfcmoff.htm
+segkm.htm
+vinietting.htm

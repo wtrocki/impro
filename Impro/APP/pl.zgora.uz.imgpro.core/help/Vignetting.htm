@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../book.css" charset="ISO-8859-1" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <title>
+      Vignetting
+    </title>
+    <script language="JavaScript" type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"> </script>
+  </head>
+  <body>
+    <h1>
+       Usunięcie winietowania
+    </h1>
+    <p><img src="./images/vinietting.png"></img>
+    </p>
+    <h2>Opis</h2>
+     <p>
+      Usuwa efekt <a href="http://pl.wikipedia.org/wiki/Winietowanie">winiety</a> - czyli zaciemnienia brzegów obrazu,
+	  który jest spowodowany niedoskonałościami urządzenia optycznego lub nieprawidłowym oświetleniem.
+	 </p>
+	 <p>
+	  Operacja usunięcia winietowania wymaga obrazu referencyjnego np. zdjęcia białej kartki zajmującej cały kadr.
+	  Algorytm wyszukuje w obrazie najjaśniejsze piksele w każdej składowej, oraz przygotowuje maskę, która zawiera mnożniki
+	  wyrównujące jasność każdego piksela do tych najaśniejszych. Każdy z obrazów wejściowych jest nastepnie mnożony przez tę
+	  maskę czego efektem jest usunięcie wszystkich zaciemnień widocznych na obrazie referencyjnym. Gdyby pomnożyć obraz
+	  referencyjny przez tę maskę, uzyskanoby całkowicie jednolity obszar.
+	 </p>
+	 <p>
+	  Ponieważ algorytm usuwa winietę sobno z każdej składowej obrazu, może on spowdować zmiane balansu bieli a więc i kolorystyki obrazu.
+	 </p>
+	<h2>Pola</h2>
+	<ul>
+	 <li><strong>Blank image</strong> - obraz referencyjny</li>
+	</ul>
+    <h2>Wejścia/Wyjścia</h2>
+    <ul>
+	 <li><strong>Wejście</strong> - lista obrazów do przetworzenia wykonanych w tych samych warunkach co obraz referencyjny</li>
+	 <li><strong>Wyjście</strong> - lista obrazów z usuniętym efektem winiety</li>
+	</ul>
+	<h2>Bibliografia</h2>
+	<ul>
+		<li><a href='http://pl.wikipedia.org/wiki/Winietowanie'>http://pl.wikipedia.org/wiki/Winietowanie</a></li>
+	</ul>
+  </body>
+</html>
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../book.css" charset="ISO-8859-1" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <title>
+      Histogram Stretching
+    </title>
+    <script language="JavaScript" type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"> </script>
+  </head>
+  <body>
+    <h1>
+          Rozciągnięcie histogramu
+    </h1>
+    <p><img src="./images/histstretch.png"></img>
+    </p>
+    <h2>Opis</h2>
+     <p>
+     	Rozciąganie histogramu wykonywane jest wtedy, gdy wartości jasności obrazu nie obejmują pełnego zakresu możliwych wartości. W przypadku reprezentacji ośmiobitowej, rozciąganie obrazu ma zastosowanie w sytuacji, gdy wszystkie wartości na obrazie mieszczą się w przedziale mniejszym niż 0 ÷255.
+	 </p>
+	 <p>
+		Aby dokonać operacji rozciągania histogramu wyznacza się minimalną oraz maksymalną wartość jaką przyjmuje obraz. Kolejną czynnością jest wyznaczenie nowych wartości obrazu tak, aby zajmowały one pełen zakres dynamiki.
+     	Operacje rozciągnięcia histogramu można przeprowadzić odpowiednio dobierając jasność i kontrast obrazu
+    </p>
+	<p>
+		Na poniższych przykładach przedstawiono:
+		<br />
+		po lewej źródłowy obraz i jego histogram, po prawej efekty rozciągania histogramu:
+	</p>
+	<p>
+		<img src="./images/lena.png" />
+		<img src="./images/lena_hist_streched.png" />
+	</p>
+	<p>
+		<img src="./images/hist.png" />
+		<img src="./images/hist_streched.png" />
+	</p>
+	<h2>Wejścia/Wyjścia</h2>
+    <ul>
+		<li><strong>Wejście</strong> - lista obrazów do przetworzenia</li>
+		<li><strong>Wyjście</strong> - lista obrazów po operacji rozciągnięcia histogramu</li>
+	</ul>
+	<h2>Bibliografia</h2>
+	<ul>
+		<li><a href='http://atol.am.gdynia.pl/tc/Radzienski/Polepszanie.htm'>http://atol.am.gdynia.pl/tc/Radzienski/Polepszanie.htm</a></li>
+
+	</ul>
+  </body>
+</html>
+

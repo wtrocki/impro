@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ImPro Image Viewer
+Bundle-SymbolicName: pl.zgora.uz.imgpro.viewer;singleton:=true
+Bundle-Version: 1.4.0.qualifier
+Bundle-Activator: pl.zgora.uz.imgpro.images.viewer.ImageViewerPlugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources
+Bundle-Vendor: W.Trocki
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: pl.zgora.uz.imgpro.images.view

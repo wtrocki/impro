@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+<link rel="stylesheet" href="../book.css" charset="ISO-8859-1"
+	type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>Generacja kodu</title>
+<script language="JavaScript" type="text/javascript"
+	src="PLUGINS_ROOT/org.eclipse.help/livehelp.js">
+	
+</script>
+</head>
+<body>
+	<h1>Integracja z matlabem</h1>
+	<p>Impro posiada pełną integracje ze środowiskiem wykonawczym
+		języka matlab. Oznacza to że bezpośrednio z poziomu ImPro możemy
+		wykonywać dowolne komendy, przeglądać ich historię oraz aktywne
+		zmienne.</p>
+	Dzięki temu wygenerowane skrypty oraz metody można testować
+	bezpośrednio w środowisku.
+	<p>
+		<img src="./images/matlabintegration.PNG"></img>
+	</p>
+	<p>Konfiguracja środowiska sprowadza się do kliku prostych kroków:
+	</p>
+	<ol>
+		<li>Przejdz do stron preferencji użytkownika (<strong>Main
+				menu }} Window }} Preferences </strong>)</li>
+		<li>Wyszukaj i zaznacz element <strong>Matlab Console</strong>
+		</li>
+		<li>Podaj ścieżkę do katalogu wykonywalnego matlaba (wersja
+			powyżej 2009)</li>
+		<li>Wykonaj restart IDE</li>
+	</ol>
+	<h2>Wykonywanie komend</h2>
+	<p>
+		Podstawowym widokiem do pracy z matlabem jest <strong>Matlab
+			Console</strong>. Dzięki niemu możemy wykonywać komendy bazując na aktywnej
+		ścieżce przeszukiwania. W poniższym przykładzie uruchomimy kod
+		wygenerowany przez impro oraz przeanalizujemy listę cech dla
+		przykładowych obrazów.</p>
+	<ol>
+		<li>Przejdz do widoku <strong>Matlab Workspace Navigator</strong>
+		</li>
+		<li>Zaznacz katalog sources i aktywuj menu kontekstowe</li>
+		<li>Wykonaj akcje <strong>Change matlab directory to
+				here</strong><br/> <img src="./images/changedir.PNG"></img>
+		</li>
+		<li>Aktywuj widok matlab console</li>
+		<li>W linii komend wpisz polecenie by wykonać kod z głównego pliku matlaba np "impro_diagram". 
+		Jeśli plik jest otwarty w edytorze można wykonać akcje <strong>Save and Run in Matlab</strong></li>
+	</ol>
+ <p>W wyniku całego cyklu przetwarzania dostajemy listę cech dla serii zdjęć. Lista cech została także zapisana w katalogu data.</p>
+<p> <img src="./images/result.PNG"></img></p>
+
+</body>
+</html>
+
